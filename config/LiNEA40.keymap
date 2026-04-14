@@ -75,6 +75,11 @@
             bindings = <&mkp MB2>;
             key-positions = <8 7>;
         };
+
+        boot {
+            bindings = <&bootloader>;
+            key-positions = <7 6 8 9 36>;
+        };
     };
 
     behaviors {
