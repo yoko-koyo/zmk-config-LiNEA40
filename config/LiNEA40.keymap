@@ -133,11 +133,6 @@
             bindings = <&kp RS(TAB)>;
             key-positions = <6 5>;
         };
-
-        wu {
-            bindings = <&kp LC(UP)>;
-            key-positions = <13 16>;
-        };
     };
 
     behaviors {
