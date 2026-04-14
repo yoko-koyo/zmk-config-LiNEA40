@@ -223,7 +223,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <160>;
             flavor = "hold-preferred";
-            quick-tap-ms = <0>; // 連打時のBS長押しを禁止
+            quick-tap-ms = <10>; // 連打時のBS長押しを禁止
             bindings = <&mo>, <&bs_m>;
         };
 
@@ -247,7 +247,7 @@
 &kp Q       &kp W     &kp E      &kp R    &kp T                                          &kp Y          &kp U  &kp I      &kp O    &kp P
 &kp A       &kp S     &kp D      &kp F    &kp G                                          &kp H          &kp J  &kp K      &kp L    &kp MINUS
 &kp Z       &kp X     &kp C      &kp V    &kp B                                          &kp N          &kp M  &kp COMMA  &kp DOT  &kp EQUAL
-&kp LSHIFT  &kp LALT  &kp LCTRL  &kp INS  &hm LCMD LANG2  &stl 4 SPACE    &lt_k 4 ENTER  &lt_k 2 LANG1         &kp SEMI   &kp SQT  &kp SLASH
+&kp LSHIFT  &kp LALT  &kp LCTRL  &kp INS  &gui_en LGUI 0  &stl 4 SPACE    &lt_k 4 ENTER  &l1_bs 2 0            &kp SEMI   &kp SQT  &kp SLASH
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
