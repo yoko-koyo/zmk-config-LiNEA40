@@ -298,14 +298,5 @@
 &bt BT_CLR_ALL  &trans        &trans        &trans        &trans        &trans    &bootloader  &studio_unlock          &trans  &trans  &trans
             >;
         };
-
-        SNIPE {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &mkp MB2  &mkp MB1  &mo 5   &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans            &trans    &trans  &trans
-            >;
-        };
     };
 };
