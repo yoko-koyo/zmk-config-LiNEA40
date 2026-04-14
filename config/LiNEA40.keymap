@@ -18,7 +18,6 @@
 // 書き込みコマンド
 // git pull | ./flash_l.sh 左用
 // git pull | ./flash_r.sh 右用
-
 //mouse cursol
 
 &mmv {
@@ -52,14 +51,19 @@
 &msc_input_listener {
     speed_up {
         layers = <FUNCTION>;
+
         // スクロールを3倍速にする
+
         input-processors = <
             &zip_wheel_scaler 4 1
         >;
     };
+
     speed_down {
         layers = <MARK>;
+
         // スクロールを?倍速にする
+
         input-processors = <
             &zip_wheel_scaler 1 3
         >;
@@ -128,6 +132,21 @@
         shift_tab {
             bindings = <&kp RS(TAB)>;
             key-positions = <6 5>;
+        };
+
+        wl {
+            bindings = <&kp LC(LEFT)>;
+            key-positions = <13 12 11>;
+        };
+
+        wr {
+            bindings = <&kp LC(RIGHT)>;
+            key-positions = <16 17 18>;
+        };
+
+        wu {
+            bindings = <&kp LC(UP)>;
+            key-positions = <13 16>;
         };
     };
 
