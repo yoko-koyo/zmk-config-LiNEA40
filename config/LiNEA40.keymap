@@ -152,7 +152,7 @@
 &trans  &trans  &trans  &trans   &trans   &trans    &trans  &trans          &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp LC(UP) LC(DOWN)>;
         };
 
         //5
