@@ -68,22 +68,22 @@
 
         CenterClick {
             bindings = <&mkp MB1>;
-            key-positions = <17 16>;
+            key-positions = <17 18>;
         };
 
         RightClick {
             bindings = <&mkp MB2>;
-            key-positions = <16 15>;
+            key-positions = <8 7>;
         };
 
         bs {
             bindings = <&kp BSPC>;
-            key-positions = <17 18>;
+            key-positions = <17 16>;
         };
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <27 28>;
+            key-positions = <16 15>;
         };
 
         esc {
@@ -93,7 +93,7 @@
 
         kp {
             bindings = <&kp DEL>;
-            key-positions = <8 7>;
+            key-positions = <6 7>;
         };
 
         bluetooth_layer {
@@ -103,7 +103,7 @@
 
         cursor_layer {
             bindings = <&mo 3>;
-            key-positions = <35 34>;
+            key-positions = <11 12>;
         };
     };
 
