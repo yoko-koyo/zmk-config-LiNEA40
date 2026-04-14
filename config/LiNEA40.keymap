@@ -197,6 +197,17 @@
             quick-tap-ms = <0>; // 連打時のBS長押しを禁止
             bindings = <&mo>, <&bs_m>;
         };
+
+        stl: stl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "STL";
+            #binding-cells = <2>;
+            tapping-term-ms = <195>;
+            quick-tap-ms = <180>;
+            require-prior-idle-ms = <100>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+        };
     };
 
     keymap {
@@ -204,10 +215,10 @@
 
         default_layer {
             bindings = <
-&kp Q       &kp W     &kp E      &kp R    &kp T                                       &kp Y          &kp U  &kp I      &kp O    &kp P
-&kp A       &kp S     &kp D      &kp F    &kp G                                       &kp H          &kp J  &kp K      &kp L    &kp MINUS
-&kp Z       &kp X     &kp C      &kp V    &kp B                                       &kp N          &kp M  &kp COMMA  &kp DOT  &kp EQUAL
-&kp LSHIFT  &kp LALT  &kp LCTRL  &kp INS  &hm LCMD LANG2  &kp SPACE    &lt_k 4 ENTER  &lt_k 2 LANG1         &kp SEMI   &kp SQT  &kp SLASH
+&kp Q       &kp W     &kp E      &kp R    &kp T                                          &kp Y          &kp U  &kp I      &kp O    &kp P
+&kp A       &kp S     &kp D      &kp F    &kp G                                          &kp H          &kp J  &kp K      &kp L    &kp MINUS
+&kp Z       &kp X     &kp C      &kp V    &kp B                                          &kp N          &kp M  &kp COMMA  &kp DOT  &kp EQUAL
+&kp LSHIFT  &kp LALT  &kp LCTRL  &kp INS  &hm LCMD LANG2  &stl 4 SPACE    &lt_k 4 ENTER  &lt_k 2 LANG1         &kp SEMI   &kp SQT  &kp SLASH
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
@@ -265,10 +276,10 @@
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                       &trans       &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                       &trans       &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                       &trans       &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LG(W)  &kp LG(LEFT)         &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                       &trans        &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                       &trans        &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                       &trans        &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LG(W)  &kp LG(LEFT)          &trans  &trans  &trans
             >;
         };
 
