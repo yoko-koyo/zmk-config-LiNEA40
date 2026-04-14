@@ -78,12 +78,12 @@
 
         bs {
             bindings = <&kp BSPC>;
-            key-positions = <16 15>;
+            key-positions = <16 17>;
         };
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <16 17>;
+            key-positions = <16 15>;
         };
 
         esc {
@@ -98,7 +98,7 @@
 
         bluetooth_layer {
             bindings = <&mo 6>;
-            key-positions = <16 17 18 15>;
+            key-positions = <40 39 38>;
         };
 
         cursor_layer {
@@ -108,12 +108,12 @@
 
         alt_bs {
             bindings = <&kp LA(BSPC)>;
-            key-positions = <6 5>;
+            key-positions = <6 7>;
         };
 
         shift_tab {
             bindings = <&kp RS(TAB)>;
-            key-positions = <7 6>;
+            key-positions = <6 5>;
         };
     };
 
