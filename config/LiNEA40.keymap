@@ -247,10 +247,10 @@
 
         FUNCTION {
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4   &kp F5                     &trans  &trans  &trans  &trans  &trans
-&kp F6  &kp F7  &kp F8  &kp F9   &kp F10                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &kp F11  &kp F12                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans   &trans   &trans    &trans  &trans          &trans  &trans  &trans
+&kp F1  &kp F2  &kp F3  &kp F4   &kp F5                     &kp KP_MULTIPLY  &kp N_7  &kp N_8  &kp N_9  &kp KP_PLUS
+&kp F6  &kp F7  &kp F8  &kp F9   &kp F10                    &kp KP_SLASH     &kp N_4  &kp N_5  &kp N_6  &kp KP_MINUS
+&trans  &trans  &trans  &kp F11  &kp F12                    &kp UNDER        &kp N_1  &kp N_2  &kp N_3  &kp ENTER
+&trans  &trans  &trans  &trans   &trans   &trans    &trans  &kp N_0                   &kp N_0  &kp DOT  &kp QUESTION
             >;
 
             sensor-bindings = <&inc_dec_kp LC(UP) LC(DOWN)>;
