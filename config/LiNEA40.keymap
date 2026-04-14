@@ -241,10 +241,10 @@
 
         CURSOR {
             bindings = <
-&trans    &kp LC(LG(LEFT))  &kp UP  &kp LC(LG(RIGHT))  &trans                       &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9  &kp KP_PLUS
-&trans    &kp LEFT          &kp DOWN      &kp RIGHT          &trans                       &kp KP_SLASH     &kp N4  &kp N5  &kp N6  &kp KP_MINUS
-&kp HOME  &kp PAGE_DOWN           &kp END       &kp PAGE_UP              &trans                       &kp UNDER        &kp N1  &kp N2  &kp N3  &kp ENTER
-&trans    &trans                  &trans        &trans                   &trans  &trans    &kp ENTER  &kp N0                   &kp DOT       &kp ENTER     &kp QUESTION
+&trans    &kp LC(LG(LEFT))  &kp UP    &kp LC(LG(RIGHT))  &trans                       &kp KP_MULTIPLY  &kp N7  &kp N8   &kp N9     &kp KP_PLUS
+&trans    &kp LEFT          &kp DOWN  &kp RIGHT          &trans                       &kp KP_SLASH     &kp N4  &kp N5   &kp N6     &kp KP_MINUS
+&kp HOME  &kp PAGE_DOWN     &kp END   &kp PAGE_UP        &trans                       &kp UNDER        &kp N1  &kp N2   &kp N3     &kp ENTER
+&trans    &trans            &trans    &trans             &trans  &trans    &kp ENTER  &kp N0                   &kp DOT  &kp ENTER  &kp QUESTION
             >;
         };
 
@@ -252,10 +252,10 @@
 
         FUNCTION {
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4   &kp F5                     &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9  &kp KP_PLUS
-&kp F6  &kp F7  &kp F8  &kp F9   &kp F10                    &kp KP_SLASH     &kp N4  &kp N5  &kp N6  &kp KP_MINUS
-&trans  &trans  &trans  &kp F11  &kp F12                    &kp UNDER        &kp N1  &kp N2  &kp N3  &kp ENTER
-&trans  &trans  &trans  &trans   &trans   &trans    &trans  &kp N0                   &kp N0  &kp DOT  &kp QUESTION
+&kp F1  &kp F2  &kp F3  &kp F4   &kp F5                     &kp ASTRK  &kp N7  &kp N8  &kp N9   &trans
+&kp F6  &kp F7  &kp F8  &kp F9   &kp F10                    &kp SLASH  &kp N4  &kp N5  &kp N6   &trans
+&trans  &trans  &trans  &kp F11  &kp F12                    &kp UNDER  &kp N1  &kp N2  &kp N3   &trans
+&trans  &trans  &trans  &trans   &trans   &trans    &trans  &kp N0             &kp N0  &kp DOT  &kp QUESTION
             >;
 
             sensor-bindings = <&inc_dec_kp LC(UP) LC(DOWN)>;
@@ -265,10 +265,10 @@
 
         SCROLL {
             bindings = <
-&trans    &kp LC(LG(LEFT))  &kp UP  &kp LC(LG(RIGHT))  &trans                    &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9  &kp KP_PLUS
-&trans    &kp LEFT          &kp DOWN      &kp RIGHT          &trans                    &kp KP_SLASH     &kp N4  &kp N5  &kp N6  &kp KP_MINUS
-&kp HOME  &kp PAGE_DOWN           &kp END       &kp PAGE_UP              &trans                    &kp UNDER        &kp N1  &kp N2  &kp N3  &kp ENTER
-&trans    &trans                  &trans        &trans                   &trans  &trans    &trans  &kp N0                   &kp N0  &kp DOT       &kp QUESTION
+&trans    &kp LC(LG(LEFT))  &kp UP    &kp LC(LG(RIGHT))  &trans                    &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9   &kp KP_PLUS
+&trans    &kp LEFT          &kp DOWN  &kp RIGHT          &trans                    &kp KP_SLASH     &kp N4  &kp N5  &kp N6   &kp KP_MINUS
+&kp HOME  &kp PAGE_DOWN     &kp END   &kp PAGE_UP        &trans                    &kp UNDER        &kp N1  &kp N2  &kp N3   &kp ENTER
+&trans    &trans            &trans    &trans             &trans  &trans    &trans  &kp N0                   &kp N0  &kp DOT  &kp QUESTION
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN UP>;
