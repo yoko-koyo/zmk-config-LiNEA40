@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,
+            //スクロール方向を逆転,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -66,39 +66,14 @@
     combos {
         compatible = "zmk,combos";
 
-        ZenkakuHankaku {
-            bindings = <&kp GRAVE>;
-            key-positions = <11 12>;
-        };
-
-        DeleteKey {
-            bindings = <&kp DEL>;
-            key-positions = <7 8>;
-        };
-
-        InsertKey {
-            bindings = <&kp INS>;
-            key-positions = <6 7>;
-        };
-
         CenterClick {
-            bindings = <&mkp MB3>;
-            key-positions = <17 16>;
+            bindings = <&mkp MB1>;
+            key-positions = <17 18>;
         };
 
         RightClick {
             bindings = <&mkp MB2>;
-            key-positions = <18 17>;
-        };
-
-        PrevClick {
-            bindings = <&mkp MB4>;
-            key-positions = <27 28>;
-        };
-
-        ClickNext {
-            bindings = <&mkp MB5>;
-            key-positions = <26 27>;
+            key-positions = <8 7>;
         };
     };
 
@@ -147,10 +122,10 @@
 
         MARK {
             bindings = <
-&kp N1     &kp N2         &kp N3    &kp N4   &kp N5                       &kp N6    &kp N7    &kp N8        &kp N9                &kp N0
-&kp SLASH  &kp BACKSLASH  &kp SEMI  &kp SQT  &kp GRAVE                    &kp LEFT  &kp DOWN  &kp UP        &kp RIGHT             &trans
-&trans     &trans         &trans    &trans   &trans                       &trans    &trans    &trans        &trans                &trans
-&trans     &trans         &trans    &trans   &trans     &trans    &trans  &trans              &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp LS(QUESTION)
+&kp N1     &kp N2         &kp N3    &kp N4   &kp N5                       &kp N6    &kp N7    &kp N8  &kp N9     &kp N0
+&kp SLASH  &kp BACKSLASH  &kp SEMI  &kp SQT  &kp GRAVE                    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
+&trans     &trans         &trans    &trans   &trans                       &kp TAB   &kp BSPC  &trans  &trans     &trans
+&trans     &trans         &trans    &trans   &trans     &trans    &trans  &trans              &trans  &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(RIGHT) LC(LEFT)>;
