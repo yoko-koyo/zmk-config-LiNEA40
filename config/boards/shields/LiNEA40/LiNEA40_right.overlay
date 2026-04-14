@@ -1,4 +1,5 @@
 #include "LiNEA40.dtsi"
+
 &default_transform {
     col-offset = <6>;
 };
@@ -14,13 +15,28 @@
 };
 
 / {
+    /* 1. input_processors の実体をここで定義 */
+    input_processors {
+        zip_temp_layer: zip_temp_layer {
+            compatible = "zmk,input-processor-temp-layer";
+            #input-processor-cells = <2>;
+            require-prior-idle-ms = <220>;
+            /* クリックキーなどを押している間に解除されないようにする設定 */
+            excluded-positions = <17 18 19>; 
+        };
+    };
+
+    /* 2. トラックボールの動作リスナー設定 */
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
+        status = "okay";
 
+        /* ここで定義した zip_temp_layer を呼び出す */
+        /* 第1引数: マウスレイヤー番号(1)、第2引数: 解除までの時間(ms) */
+        input-processors = <&zip_temp_layer 1 2000>;
     };
 };
-
 
 &pinctrl {
     spi0_default: spi0_default {
@@ -57,14 +73,12 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //MOT-D6
-        automouse-layer = <1>;
+        
+        /* ドライバ標準の自動レイヤーは 0(無効) にして zip_temp_layer に任せる */
+        automouse-layer = <0>; 
         snipe-layers = <4>;
         scroll-layers = <5>;
-        //scroll-layers = <4 5 6>;
     };
 };
 
-&trackball_listener {
-    status = "okay";
-    device = <&trackball>;
-};
+/* 重複定義を避けるため listener は一つにまとめました */
