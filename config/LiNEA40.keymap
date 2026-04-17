@@ -83,51 +83,63 @@
 / {
     macros {
         /* ()を入力してカーソルを中に戻す */
+
         macro_parens: macro_parens {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
-            bindings = <&kp LPAR>, <&kp RPAR>, <&kp LEFT>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&kp LPAR &kp RPAR &kp LEFT>;
         };
 
         /* []を入力してカーソルを中に戻す */
+
         macro_brackets: macro_brackets {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
-            bindings = <&kp LBKT>, <&kp RBKT>, <&kp LEFT>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&kp LBKT &kp RBKT &kp LEFT>;
         };
 
         /* {}を入力してカーソルを中に戻す */
+
         macro_braces: macro_braces {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
-            bindings = <&kp LBRC>, <&kp RBRC>, <&kp LEFT>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&kp LBRC &kp RBRC &kp LEFT>;
         };
 
         /* <>を入力してカーソルを中に戻す */
+
         macro_angles: macro_angles {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
-            bindings = <&kp LT>, <&kp GT>, <&kp LEFT>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&kp LT &kp GT &kp LEFT>;
         };
 
         /* ''を入力してカーソルを中に戻す */
+
         macro_squotes: macro_squotes {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
-            bindings = <&kp SQT>, <&kp SQT>, <&kp LEFT>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&kp SQT &kp SQT &kp LEFT>;
         };
 
         /* ""を入力してカーソルを中に戻す */
+
         macro_dquotes: macro_dquotes {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
-            bindings = <&kp DQT>, <&kp DQT>, <&kp LEFT>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&kp DQT &kp DQT &kp LEFT>;
         };
     };
 
@@ -149,7 +161,7 @@
             key-positions = <18 16>;
         };
 
-        kp {
+        del {
             bindings = <&kp DEL>;
             key-positions = <9 8>;
         };
@@ -160,43 +172,46 @@
         };
 
         /* --- 右手側：主要な括弧（ホームポジション付近） --- */
-
         /* ( ) : [J] + [K] 同時押し */
+
         combo_parens {
-            key-positions = <14 15>; 
+            key-positions = <3 6>;
             bindings = <&macro_parens>;
         };
 
         /* [ ] : [K] + [L] 同時押し */
+
         combo_brackets {
-            key-positions = <15 16>; 
+            key-positions = <13 16>;
             bindings = <&macro_brackets>;
         };
 
         /* { } : [M] + [,] 同時押し (J・Kの下段) */
+
         combo_braces {
-            key-positions = <25 26>; 
+            key-positions = <23 26>;
             bindings = <&macro_braces>;
         };
 
         /* < > : [,] + [.] 同時押し (K・Lの下段) */
+
         combo_angles {
-            key-positions = <26 27>; 
+            key-positions = <28 27>;
             bindings = <&macro_angles>;
         };
 
-
         /* --- 左手側：引用符（ホームポジション付近） --- */
-
         /* ' ' : [D] + [F] 同時押し */
+
         combo_squotes {
-            key-positions = <12 13>; 
+            key-positions = <7 8>;
             bindings = <&macro_squotes>;
         };
 
         /* " " : [S] + [D] 同時押し */
+
         combo_dquotes {
-            key-positions = <11 12>; 
+            key-positions = <17 18>;
             bindings = <&macro_dquotes>;
         };
     };
