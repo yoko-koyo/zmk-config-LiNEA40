@@ -153,7 +153,7 @@
 
         RightClick {
             bindings = <&mkp MB2>;
-            key-positions = <15 16>;
+            key-positions = <7 6>;
         };
 
         esc {
@@ -228,6 +228,11 @@
         combo_braces4 {
             bindings = <&macro_braces>;
             key-positions = <21 22>;
+        };
+
+        bs {
+            bindings = <&kp BSPC>;
+            key-positions = <15 16>;
         };
     };
 
