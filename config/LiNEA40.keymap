@@ -159,9 +159,45 @@
             key-positions = <40 39 38>;
         };
 
-        cursor_layer {
-            bindings = <&mo 3>;
-            key-positions = <16 19>;
+        /* --- 右手側：主要な括弧（ホームポジション付近） --- */
+
+        /* ( ) : [J] + [K] 同時押し */
+        combo_parens {
+            key-positions = <14 15>; 
+            bindings = <&macro_parens>;
+        };
+
+        /* [ ] : [K] + [L] 同時押し */
+        combo_brackets {
+            key-positions = <15 16>; 
+            bindings = <&macro_brackets>;
+        };
+
+        /* { } : [M] + [,] 同時押し (J・Kの下段) */
+        combo_braces {
+            key-positions = <25 26>; 
+            bindings = <&macro_braces>;
+        };
+
+        /* < > : [,] + [.] 同時押し (K・Lの下段) */
+        combo_angles {
+            key-positions = <26 27>; 
+            bindings = <&macro_angles>;
+        };
+
+
+        /* --- 左手側：引用符（ホームポジション付近） --- */
+
+        /* ' ' : [D] + [F] 同時押し */
+        combo_squotes {
+            key-positions = <12 13>; 
+            bindings = <&macro_squotes>;
+        };
+
+        /* " " : [S] + [D] 同時押し */
+        combo_dquotes {
+            key-positions = <11 12>; 
+            bindings = <&macro_dquotes>;
         };
     };
 
