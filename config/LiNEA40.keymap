@@ -173,26 +173,8 @@
 
         /* --- 右手側：主要な括弧（ホームポジション付近） --- */
         /* ( ) : [J] + [K] 同時押し */
-
-        combo_parens {
-            key-positions = <3 6>;
-            bindings = <&macro_parens>;
-        };
-
         /* [ ] : [K] + [L] 同時押し */
-
-        combo_brackets {
-            key-positions = <13 16>;
-            bindings = <&macro_brackets>;
-        };
-
         /* { } : [M] + [,] 同時押し (J・Kの下段) */
-
-        combo_braces {
-            key-positions = <23 26>;
-            bindings = <&macro_braces>;
-        };
-
         /* < > : [,] + [.] 同時押し (K・Lの下段) */
 
         combo_angles {
@@ -217,17 +199,17 @@
 
         combo_parens2 {
             bindings = <&macro_parens>;
-            key-positions = <1 2>;
+            key-positions = <2 3>;
         };
 
         combo_brackets3 {
             bindings = <&macro_brackets>;
-            key-positions = <11 12>;
+            key-positions = <12 13>;
         };
 
         combo_braces4 {
             bindings = <&macro_braces>;
-            key-positions = <21 22>;
+            key-positions = <22 23>;
         };
 
         bs {
@@ -350,10 +332,10 @@
 
         default_layer {
             bindings = <
-&kp Q          &kp W      &kp E     &kp R    &kp T                                          &kp Y          &kp U  &kp I      &kp O      &kp P
-&kp A          &kp S      &kp D     &kp F    &kp G                                          &kp H          &kp J  &kp K      &kp L      &kp Z
-&hm LSHFT TAB  &kp X      &kp C     &kp V    &kp B                                          &kp N          &kp M  &kp COMMA  &kp DOT    &hm RSHFT BSPC
-&kp LALT       &kp LCTRL  &kp CAPS  &kp INS  &hm LCMD LANG2  &stl 4 SPACE    &lt_k 4 ENTER  &lt_k 2 LANG1         &kp MINUS  &kp EQUAL  &kp SLASH
+&kp Q          &kp W      &kp E     &kp R    &kp T                                          &kp Y          &kp U  &kp I      &kp O     &kp P
+&kp A          &kp S      &kp D     &kp F    &kp G                                          &kp H          &kp J  &kp K      &kp L     &kp Z
+&hm LSHFT TAB  &kp X      &kp C     &kp V    &kp B                                          &kp N          &kp M  &kp COMMA  &kp DOT   &hm RSHFT BSPC
+&kp LALT       &kp LCTRL  &kp CAPS  &kp INS  &hm LCMD LANG2  &stl 4 SPACE    &lt_k 4 ENTER  &lt_k 2 LANG1         &kp LBKT   &kp RBKT  &kp SLASH
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
