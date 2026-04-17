@@ -214,6 +214,21 @@
             key-positions = <17 18>;
             bindings = <&macro_dquotes>;
         };
+
+        combo_parens2 {
+            bindings = <&macro_parens>;
+            key-positions = <1 2>;
+        };
+
+        combo_brackets3 {
+            bindings = <&macro_brackets>;
+            key-positions = <11 12>;
+        };
+
+        combo_braces4 {
+            bindings = <&macro_braces>;
+            key-positions = <21 22>;
+        };
     };
 
     behaviors {
