@@ -106,6 +106,14 @@
             bindings = <&kp LBRC>, <&kp RBRC>, <&kp LEFT>;
         };
 
+        /* <>を入力してカーソルを中に戻す */
+        macro_angles: macro_angles {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>; tap-ms = <10>;
+            bindings = <&kp LT>, <&kp GT>, <&kp LEFT>;
+        };
+
         /* ''を入力してカーソルを中に戻す */
         macro_squotes: macro_squotes {
             compatible = "zmk,behavior-macro";
