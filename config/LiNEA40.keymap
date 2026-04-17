@@ -353,10 +353,10 @@
 
         MARK {
             bindings = <
-&kp N1     &kp N2     &kp N3    &kp N4   &kp N5                       &kp N6     &kp N7     &kp N8  &kp N9     &kp N0
-&kp MINUS  &kp SLASH  &kp BSLH  &kp SQT  &kp GRAVE                    &kp LEFT   &kp DOWN   &kp UP  &kp RIGHT  &kp SEMI
-&trans     &trans     &trans    &trans   &trans                       &kp EQUAL  &kp MINUS  &trans  &trans     &trans
-&trans     &trans     &trans    &trans   &trans     &trans    &trans  &trans                &trans  &trans     &trans
+&kp N1     &kp N2   &kp N3    &kp N4     &kp N5                       &kp N6     &kp N7     &kp N8  &kp N9     &kp N0
+&kp MINUS  &kp SQT  &kp BSLH  &kp SLASH  &kp GRAVE                    &kp LEFT   &kp DOWN   &kp UP  &kp RIGHT  &kp SEMI
+&trans     &trans   &trans    &trans     &trans                       &kp EQUAL  &kp MINUS  &trans  &trans     &trans
+&trans     &trans   &trans    &trans     &trans     &trans    &trans  &trans                &trans  &trans     &trans
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
