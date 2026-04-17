@@ -280,6 +280,7 @@
             label = "HM";
             #binding-cells = <2>;
             tapping-term-ms = <160>;
+            quick-tap-ms = <190>;
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
         };
