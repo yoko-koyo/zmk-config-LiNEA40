@@ -81,6 +81,48 @@
 };
 
 / {
+    macros {
+        /* ()を入力してカーソルを中に戻す */
+        macro_parens: macro_parens {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>; tap-ms = <10>;
+            bindings = <&kp LPAR>, <&kp RPAR>, <&kp LEFT>;
+        };
+
+        /* []を入力してカーソルを中に戻す */
+        macro_brackets: macro_brackets {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>; tap-ms = <10>;
+            bindings = <&kp LBKT>, <&kp RBKT>, <&kp LEFT>;
+        };
+
+        /* {}を入力してカーソルを中に戻す */
+        macro_braces: macro_braces {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>; tap-ms = <10>;
+            bindings = <&kp LBRC>, <&kp RBRC>, <&kp LEFT>;
+        };
+
+        /* ''を入力してカーソルを中に戻す */
+        macro_squotes: macro_squotes {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>; tap-ms = <10>;
+            bindings = <&kp SQT>, <&kp SQT>, <&kp LEFT>;
+        };
+
+        /* ""を入力してカーソルを中に戻す */
+        macro_dquotes: macro_dquotes {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>; tap-ms = <10>;
+            bindings = <&kp DQT>, <&kp DQT>, <&kp LEFT>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
