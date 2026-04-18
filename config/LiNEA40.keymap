@@ -56,7 +56,6 @@
     //         &zip_wheel_scaler 4 1
     //     >;
     // };
-
     // speed_down {
     //     layers = <MARK>;
     //     // スクロールを?倍速にする
@@ -145,88 +144,93 @@
         /* ============================================================
            CATEGORY: MOUSE & SYSTEM (CamelCase)
            =========================================================== */
-
         // 左クリック : 右手ホーム段 [J] + [K]
+
         CenterClick {
             bindings = <&mkp MB1>;
-            key-positions = <16 17>; 
+            key-positions = <16 17>;
         };
 
         // 右クリック : 右手ホーム段 [J] + [K] の上段キー
+
         RightClick {
             bindings = <&mkp MB2>;
             key-positions = <6 7>;
         };
 
         // Bluetoothレイヤー(6)呼び出し : 最下段3キー同時押し
+
         BluetoothLayer {
             bindings = <&mo 6>;
             key-positions = <38 39 40>;
         };
 
-
         /* ============================================================
            CATEGORY: SYMBOL MACROS (snake_case)
            =========================================================== */
-
         /* --- 右手側：主要な括弧 --- */
-
         // ( ) : 右手上段 [U] + [I]
+
         combo_parens {
             bindings = <&macro_parens>;
             key-positions = <2 3>;
         };
 
         // [ ] : 右手ホーム段 [J] + [K]
+
         combo_brackets {
             bindings = <&macro_brackets>;
             key-positions = <12 13>;
         };
 
         // { } : 右手下段 [M] + [,]
+
         combo_braces {
             bindings = <&macro_braces>;
             key-positions = <22 23>;
         };
 
         // < > : 右手下段 [,] + [.]
+
         combo_angles {
             bindings = <&macro_angles>;
             key-positions = <27 28>;
         };
 
         /* --- 左手側：引用符 --- */
-
         // ' ' : 左手ホーム段 [D] + [F]
+
         combo_squotes {
             bindings = <&macro_squotes>;
             key-positions = <7 8>;
         };
 
         // " " : 左手ホーム段 [S] + [D]
+
         combo_dquotes {
             bindings = <&macro_dquotes>;
             key-positions = <17 18>;
         };
 
-
         /* ============================================================
            CATEGORY: EDITING & SPECIAL (snake_case)
            =========================================================== */
-
         // Backspace : 右手ホーム段 [K] + [L]
+
         combo_bs {
             bindings = <&kp BSPC>;
             key-positions = <15 16>;
         };
 
         // Delete : 右手上段端付近
+
         combo_del {
             bindings = <&kp DEL>;
             key-positions = <5 6>;
         };
 
         // Escape : 右手ホーム段 [K] + [右端キー]
+
         combo_esc {
             bindings = <&kp ESC>;
             key-positions = <16 18>;
@@ -235,36 +239,47 @@
 
     behaviors {
         // Caps Lockをダブルタップで発動させる設定
+
         td_caps: td_caps {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_CAPS";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&none>, <&kp CAPS>; // 1タップ目は何もしない（あるいは別のキー）、2タップでCaps
+            bindings = <&none>, <&kp CAPS>;
+ // 1タップ目は何もしない（あるいは別のキー）、2タップでCaps
         };
 
         // カスタムHold-Tap: ホールドでLCMD、タップでLANG2、ダブルタップでCaps
         // ※gui_enをベースに、タップ部分をtd_capsと組み合わせたような挙動にします
+
         hm_caps: hm_caps {
             compatible = "zmk,behavior-hold-tap";
             label = "HM_CAPS";
             #binding-cells = <2>;
+
             // ホールド判定を少し短めにして、Commandとしての反応を速くする
-            tapping-term-ms = <200>; 
+
+            tapping-term-ms = <200>;
+
             // 連続入力時の判定を安定させる
+
             quick-tap-ms = <175>;
+
             // タップ判定よりもホールド（Command）を優先
-            flavor = "hold-preferred"; 
+
+            flavor = "hold-preferred";
             bindings = <&kp>, <&td_caps_lang>;
         };
 
         // LANG2とCAPSのタップダンス
+
         td_caps_lang: td_caps_lang {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_CAPS_LANG";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp LANG2>, <&kp CAPS>; // 1タップで英数、2タップでCaps
+            bindings = <&kp LANG2>, <&kp CAPS>;
+ // 1タップで英数、2タップでCaps
         };
 
         re_kp: sensor_rotate_kp {
@@ -380,10 +395,10 @@
 
         default_layer {
             bindings = <
-&kp Q        &kp W      &kp E     &kp R    &kp T                                           &kp Y  &kp U  &kp I      &kp O     &kp P
-&kp A        &kp S      &kp D     &kp F    &kp G                                           &kp H  &kp J  &kp K      &kp L     &kp MINUS
-&hm LSHFT X  &kp Z      &kp C     &kp V    &kp B                                           &kp N  &kp M  &kp COMMA  &kp DOT   &hm RSHFT BSPC
-&kp LALT     &kp LCTRL  &kp TAB   &kp INS  &hm_caps LCMD 0  &stl 4 SPACE    &lt_k 4 ENTER  &lt_k 2 LANG1 &kp LBKT   &kp RBKT  &kp TAB 
+&kp Q        &kp W      &kp E    &kp R    &kp T                                           &kp Y          &kp U  &kp I      &kp O     &kp P
+&kp A        &kp S      &kp D    &kp F    &kp G                                           &kp H          &kp J  &kp K      &kp L     &kp MINUS
+&hm LSHFT X  &kp Z      &kp C    &kp V    &kp B                                           &kp N          &kp M  &kp COMMA  &kp DOT   &hm RSHFT BSPC
+&kp LALT     &kp LCTRL  &kp TAB  &kp INS  &hm_caps LCMD 0  &stl 4 SPACE    &lt_k 4 ENTER  &lt_k 2 LANG1         &kp LBKT   &kp RBKT  &kp TAB
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
@@ -406,11 +421,11 @@
             bindings = <
 &kp N1     &kp N2   &kp N3    &kp N4     &kp N5                       &kp N6     &kp N7     &kp N8  &kp N9     &kp N0
 &kp MINUS  &kp SQT  &kp BSLH  &kp SLASH  &kp GRAVE                    &kp LEFT   &kp DOWN   &kp UP  &kp RIGHT  &kp SEMI
-&trans     &trans   &trans    &trans     &trans                       &kp MINUS  &kp EQUAL &trans  &trans     &trans
+&trans     &trans   &trans    &trans     &trans                       &kp MINUS  &kp EQUAL  &trans  &trans     &trans
 &trans     &trans   &trans    &trans     &trans     &trans    &trans  &trans                &trans  &trans     &trans
             >;
 
-            sensor-bindings = <&re_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&re_kp C_VOL_DN C_VOL_UP>;
         };
 
         //3
@@ -436,7 +451,7 @@
 &trans  &trans  &trans  &trans   &trans   &trans    &trans  &kp N0             &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&re_kp C_BRI_UP C_BRI_DN>;
+            sensor-bindings = <&re_kp C_BRI_DN C_BRI_UP>;
         };
 
         //5
