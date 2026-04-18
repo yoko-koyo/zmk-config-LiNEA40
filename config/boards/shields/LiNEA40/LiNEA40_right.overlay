@@ -22,7 +22,7 @@
             #input-processor-cells = <2>;
             require-prior-idle-ms = <220>;
             /* クリックキーなどを押している間に解除されないようにする設定 */
-            excluded-positions = <17 18 19>; 
+            excluded-positions = <16 17 18>; 
         };
     };
 
