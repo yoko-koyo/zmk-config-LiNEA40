@@ -414,7 +414,7 @@
 &kp Q        &kp W      &kp E    &kp R    &kp T                                                  &kp Y               &kp U  &kp I      &kp O     &kp P
 &kp A        &kp S      &kp D    &kp F    &kp G                                                  &kp H               &kp J  &kp K      &kp L     &kp MINUS
 &hm LSHFT X  &kp Z      &kp C    &kp V    &kp B                                                  &kp N               &kp M  &kp COMMA  &kp DOT   &hm RSHFT BSPC
-&kp LALT     &kp LCTRL  &kp TAB  &kp INS  &hm_caps LCMD 0  &stl FUNCTION SPACE    &lt_k 3 ENTER  &lt_k NUMBER LANG1         &kp LBKT   &kp RBKT  &kp TAB
+&kp LALT     &kp LCTRL  &kp TAB  &kp INS  &hm_caps LCMD 0  &stl FUNCTION SPACE    &lt_k 3 ENTER  &lt_k NUMBER LANG1         &kp LBKT   &kp RBKT  &kp SLASH
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
