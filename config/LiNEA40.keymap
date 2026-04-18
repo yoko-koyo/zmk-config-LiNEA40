@@ -49,25 +49,21 @@
 };
 
 &msc_input_listener {
-    speed_up {
-        layers = <FUNCTION>;
+    // speed_up {
+    //     layers = <FUNCTION>;
+    //     // スクロールを3倍速にする
+    //     input-processors = <
+    //         &zip_wheel_scaler 4 1
+    //     >;
+    // };
 
-        // スクロールを3倍速にする
-
-        input-processors = <
-            &zip_wheel_scaler 4 1
-        >;
-    };
-
-    speed_down {
-        layers = <MARK>;
-
-        // スクロールを?倍速にする
-
-        input-processors = <
-            &zip_wheel_scaler 1 3
-        >;
-    };
+    // speed_down {
+    //     layers = <MARK>;
+    //     // スクロールを?倍速にする
+    //     input-processors = <
+    //         &zip_wheel_scaler 1 3
+    //     >;
+    // };
 };
 
 &trackball_listener {
@@ -414,7 +410,7 @@
 &trans     &trans   &trans    &trans     &trans     &trans    &trans  &trans                &trans  &trans     &trans
             >;
 
-            sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&re_kp C_VOL_UP C_VOL_DN>;
         };
 
         //3
@@ -440,7 +436,7 @@
 &trans  &trans  &trans  &trans   &trans   &trans    &trans  &kp N0             &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&re_kp C_BRI_UP C_BRI_DN>;
         };
 
         //5
