@@ -142,7 +142,7 @@
             bindings = <&kp DQT &kp DQT &kp LEFT>;
         };
     };
-    
+
     combos {
         compatible = "zmk,combos";
 
@@ -238,6 +238,39 @@
     };
 
     behaviors {
+        // Caps Lockをダブルタップで発動させる設定
+        td_caps: td_caps {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_CAPS";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&kp CAPS>; // 1タップ目は何もしない（あるいは別のキー）、2タップでCaps
+        };
+
+        // カスタムHold-Tap: ホールドでLCMD、タップでLANG2、ダブルタップでCaps
+        // ※gui_enをベースに、タップ部分をtd_capsと組み合わせたような挙動にします
+        hm_caps: hm_caps {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HM_CAPS";
+            #binding-cells = <2>;
+            // ホールド判定を少し短めにして、Commandとしての反応を速くする
+            tapping-term-ms = <200>; 
+            // 連続入力時の判定を安定させる
+            quick-tap-ms = <175>;
+            // タップ判定よりもホールド（Command）を優先
+            flavor = "hold-preferred"; 
+            bindings = <&kp>, <&td_caps_lang>;
+        };
+
+        // LANG2とCAPSのタップダンス
+        td_caps_lang: td_caps_lang {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_CAPS_LANG";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp LANG2>, <&kp CAPS>; // 1タップで英数、2タップでCaps
+        };
+
         re_kp: sensor_rotate_kp {
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
@@ -354,7 +387,7 @@
 &kp Q        &kp W      &kp E     &kp R    &kp T                                          &kp Y          &kp U  &kp I      &kp O     &kp P
 &kp A        &kp S      &kp D     &kp F    &kp G                                          &kp H          &kp J  &kp K      &kp L     &kp MINUS
 &hm LSHFT X  &kp Z      &kp C     &kp V    &kp B                                          &kp N          &kp M  &kp COMMA  &kp DOT   &hm RSHFT BSPC
-&kp LALT     &kp LCTRL  &kp CAPS  &kp INS  &hm LCMD LANG2  &stl 4 SPACE    &lt_k 4 ENTER  &lt_k 2 LANG1         &kp LBKT   &kp RBKT  &kp TAB
+&kp LALT     &kp LCTRL  &kp CAPS  &kp INS  &hm_caps LCMD 0  &stl 4 SPACE    &lt_k 4 ENTER  &lt_k 2 LANG1         &kp LBKT   &kp RBKT  &kp TAB
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
