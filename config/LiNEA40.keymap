@@ -9,6 +9,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // レイヤー定義
+
 #define MOUSE 1
 #define NUMBER 2
 #define SYMBOL 3
@@ -19,8 +20,8 @@
 // 書き込みコマンド
 // git pull | ./flash_l.sh 左用
 // git pull | ./flash_r.sh 右用
-
 //mouse cursol
+
 &mmv {
     delay-ms = <20>;
     trigger-period-ms = <5>;
@@ -29,6 +30,7 @@
 };
 
 //mouse scroll
+
 &msc {
     delay-ms = <3>;
     trigger-period-ms = <3>;
@@ -78,6 +80,7 @@
 / {
     macros {
         /* ()を入力してカーソルを中に戻す */
+
         macro_parens: macro_parens {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -87,6 +90,7 @@
         };
 
         /* []を入力してカーソルを中に戻す */
+
         macro_brackets: macro_brackets {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -96,6 +100,7 @@
         };
 
         /* {}を入力してカーソルを中に戻す */
+
         macro_braces: macro_braces {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -105,6 +110,7 @@
         };
 
         /* <>を入力してカーソルを中に戻す */
+
         macro_angles: macro_angles {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -114,6 +120,7 @@
         };
 
         /* ''を入力してカーソルを中に戻す */
+
         macro_squotes: macro_squotes {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -123,6 +130,7 @@
         };
 
         /* ""を入力してカーソルを中に戻す */
+
         macro_dquotes: macro_dquotes {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -139,18 +147,21 @@
            CATEGORY: MOUSE & SYSTEM (CamelCase)
            =========================================================== */
         // 左クリック : 右手ホーム段 [J] + [K]
+
         CenterClick {
             bindings = <&mkp MB1>;
             key-positions = <16 17>;
         };
 
         // 右クリック : 右手ホーム段 [J] + [K] の上段キー
+
         RightClick {
             bindings = <&mkp MB2>;
             key-positions = <6 7>;
         };
 
         // Bluetoothレイヤー(6)呼び出し : 最下段3キー同時押し
+
         BluetoothLayer {
             bindings = <&mo WIRELESS>;
             key-positions = <38 39 40>;
@@ -161,24 +172,28 @@
            =========================================================== */
         /* --- 右手側：主要な括弧 --- */
         // ( ) : 右手上段 [U] + [I]
+
         combo_parens {
             bindings = <&macro_parens>;
             key-positions = <2 3>;
         };
 
         // [ ] : 右手ホーム段 [J] + [K]
+
         combo_brackets {
             bindings = <&macro_brackets>;
             key-positions = <12 13>;
         };
 
         // { } : 右手下段 [M] + [,]
+
         combo_braces {
             bindings = <&macro_braces>;
             key-positions = <22 23>;
         };
 
         // < > : 右手下段 [,] + [.]
+
         combo_angles {
             bindings = <&macro_angles>;
             key-positions = <27 28>;
@@ -186,12 +201,14 @@
 
         /* --- 左手側：引用符 --- */
         // ' ' : 左手ホーム段 [D] + [F]
+
         combo_squotes {
             bindings = <&macro_squotes>;
             key-positions = <7 8>;
         };
 
         // " " : 左手ホーム段 [S] + [D]
+
         combo_dquotes {
             bindings = <&macro_dquotes>;
             key-positions = <17 18>;
@@ -201,18 +218,21 @@
            CATEGORY: EDITING & SPECIAL (snake_case)
            =========================================================== */
         // Backspace : 右手ホーム段 [K] + [L]
+
         combo_bs {
             bindings = <&kp BSPC>;
             key-positions = <15 16>;
         };
 
         // Delete : 右手上段端付近
+
         combo_del {
             bindings = <&kp DEL>;
             key-positions = <5 6>;
         };
 
         // Escape : 右手ホーム段 [K] + [右端キー]
+
         combo_esc {
             bindings = <&kp ESC>;
             key-positions = <16 18>;
@@ -221,37 +241,48 @@
 
     behaviors {
         // Caps Lockをダブルタップで発動させる設定
+
         td_caps: td_caps {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_CAPS";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&none>, <&kp CAPS>;
+
             // 1タップ目は何もしない（あるいは別のキー）、2タップでCaps
         };
 
         // カスタムHold-Tap: ホールドでLCMD、タップでLANG2、ダブルタップでCaps
         // ※gui_enをベースに、タップ部分をtd_capsと組み合わせたような挙動にします
+
         hm_caps: hm_caps {
             compatible = "zmk,behavior-hold-tap";
             label = "HM_CAPS";
             #binding-cells = <2>;
+
             // ホールド判定を少し短めにして、Commandとしての反応を速くする
+
             tapping-term-ms = <200>;
+
             // 連続入力時の判定を安定させる
+
             quick-tap-ms = <175>;
+
             // タップ判定よりもホールド（Command）を優先
+
             flavor = "hold-preferred";
             bindings = <&kp>, <&td_caps_lang>;
         };
 
         // LANG2とCAPSのタップダンス
+
         td_caps_lang: td_caps_lang {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_CAPS_LANG";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             bindings = <&kp LANG2>, <&kp CAPS>;
+
             // 1タップで英数、2タップでCaps
         };
 
@@ -265,10 +296,12 @@
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
+
             tap-ms = <20>;
         };
 
         // タップで英数、ダブルタップでかな
+
         td_enjp: td_enjp {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_ENJP";
@@ -278,6 +311,7 @@
         };
 
         // 長押しGUI、タップで英数かな切り替え
+
         gui_en: gui_en {
             compatible = "zmk,behavior-hold-tap";
             label = "GUI_EN";
@@ -289,6 +323,7 @@
         };
 
         // 一般的なHold-Tap (Hold: Modifier, Tap: Key)
+
         hm: hm {
             compatible = "zmk,behavior-hold-tap";
             label = "HM";
@@ -300,6 +335,7 @@
         };
 
         // 一般的なLayer-Tap (Hold: Layer, Tap: Key)
+
         lt_k: lt_k {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_K";
@@ -311,6 +347,7 @@
         };
 
         // スペース用Hold-Tap
+
         st: st {
             compatible = "zmk,behavior-hold-tap";
             label = "ST";
@@ -323,15 +360,18 @@
         };
 
         // Ctrl併用時に単語削除(Alt+BS)化
+
         bs_m: bs_m {
             compatible = "zmk,behavior-mod-morph";
             label = "BS_M";
             #binding-cells = <0>;
             bindings = <&kp BSPC>, <&kp LA(BSPC)>;
+
             mods = <(MOD_LCTL)>;
         };
 
         // 右親指用：長押しLayer 1、タップBSPC（Ctrl時は単語削除）、連打長押しでLayer優先
+
         l1_bs: l1_bs {
             compatible = "zmk,behavior-hold-tap";
             label = "L1_BS";
@@ -359,25 +399,28 @@
 
         default_layer {
             bindings = <
-&kp Q        &kp W      &kp E    &kp R    &kp T                                           &kp Y          &kp U  &kp I      &kp O     &kp P
-&kp A        &kp S      &kp D    &kp F    &kp G                                           &kp H          &kp J  &kp K      &kp L     &kp MINUS
-&hm LSHFT X  &kp Z      &kp C    &kp V    &kp B                                           &kp N          &kp M  &kp COMMA  &kp DOT   &hm RSHFT BSPC
-&kp LALT     &kp LCTRL  &kp TAB  &kp INS  &hm_caps LCMD 0  &stl FUNCTION SPACE    &lt_k FUNCTION ENTER  &lt_k NUMBER LANG1         &kp LBKT   &kp RBKT  &kp TAB
+&kp Q        &kp W      &kp E    &kp R    &kp T                                                  &kp Y               &kp U  &kp I      &kp O     &kp P
+&kp A        &kp S      &kp D    &kp F    &kp G                                                  &kp H               &kp J  &kp K      &kp L     &kp MINUS
+&hm LSHFT X  &kp Z      &kp C    &kp V    &kp B                                                  &kp N               &kp M  &kp COMMA  &kp DOT   &hm RSHFT BSPC
+&kp LALT     &kp LCTRL  &kp TAB  &kp INS  &hm_caps LCMD 0  &stl FUNCTION SPACE    &lt_k 3 ENTER  &lt_k NUMBER LANG1         &kp LBKT   &kp RBKT  &kp TAB
             >;
+
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
         };
 
         //1 マウス操作用
+
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &mkp MB2  &mkp MB1  &mo SCROLL   &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans            &trans    &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans      &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &mkp MB2  &mkp MB1  &mo SCROLL  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans      &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans            &trans    &trans      &trans
             >;
         };
 
         //2 数字・基本記号・矢印キー
+
         NUMBER {
             bindings = <
 &kp N1     &kp N2   &kp N3    &kp N4     &kp N5                       &kp N6    &kp N7    &kp N8  &kp N9     &kp N0
@@ -385,21 +428,25 @@
 &trans     &trans   &trans    &trans     &trans                       &kp DEL   &kp TAB   &trans  &trans     &trans
 &trans     &trans   &trans    &trans     &trans     &trans    &trans  &trans              &trans  &trans     &trans
             >;
+
             sensor-bindings = <&re_kp C_VOL_DN C_VOL_UP>;
         };
 
         //3 NUMBERのOption(Alt)付き矢印
+
         SYMBOL {
             bindings = <
-&kp EXCL   &kp AT   &kp HASH  &kp DLLR   &kp PRCNT                    &kp CARET    &kp AMPS     &kp ASTRK  &kp LPAR      &kp RPAR
-&kp PLUS   &kp DQT  &kp PIPE  &kp QMARK  &kp TILDE                    &kp LA(LEFT) &kp LA(DOWN) &kp LA(UP) &kp LA(RIGHT) &kp COLON
-&trans     &trans   &trans    &trans     &trans                       &kp DEL      &kp TAB      &trans     &trans        &trans
-&trans     &trans   &trans    &trans     &trans     &trans    &trans  &trans                    &trans     &trans        &trans
+&kp EXCL  &kp AT   &kp HASH  &kp DLLR   &kp PRCNT                    &kp CARET     &kp AMPS      &kp ASTRK   &kp LPAR       &kp RPAR
+&kp PLUS  &kp DQT  &kp PIPE  &kp QMARK  &kp TILDE                    &kp LA(LEFT)  &kp LA(DOWN)  &kp LA(UP)  &kp LA(RIGHT)  &kp COLON
+&trans    &trans   &trans    &trans     &trans                       &kp DEL       &kp TAB       &trans      &trans         &trans
+&trans    &trans   &trans    &trans     &trans     &trans    &trans  &trans                      &trans      &trans         &trans
             >;
+
             sensor-bindings = <&re_kp C_BRI_DN C_BRI_UP>;
         };
 
         //4 F1〜F12・テンキー
+
         FUNCTION {
             bindings = <
 &kp F1  &kp F2  &kp F3  &kp F4   &kp F5                     &kp ASTRK  &kp N7  &kp N8  &kp N9  &kp N0
@@ -407,10 +454,12 @@
 &trans  &trans  &trans  &kp F11  &kp F12                    &kp UNDER  &kp N1  &kp N2  &kp N3  &trans
 &trans  &trans  &trans  &trans   &trans   &trans    &trans  &kp N0             &trans  &trans  &trans
             >;
+
             sensor-bindings = <&re_kp C_BRI_DN C_BRI_UP>;
         };
 
         //5 スクロール操作用
+
         SCROLL {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                       &trans        &trans  &trans  &trans  &trans
@@ -421,6 +470,7 @@
         };
 
         //6 通信・システム設定
+
         WIRELESS {
             bindings = <
 &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                         &trans          &trans  &trans  &trans  &trans
