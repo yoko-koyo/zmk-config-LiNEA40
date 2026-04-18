@@ -138,6 +138,13 @@
             tap-ms = <10>;
             bindings = <&kp DQT &kp DQT &kp LEFT>;
         };
+
+        macro_if: if {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp RPAR &kp SPACE &kp LBRC &kp RBRC>;
+            label = "IF";
+        };
     };
 
     combos {
@@ -236,6 +243,11 @@
         combo_esc {
             bindings = <&kp ESC>;
             key-positions = <16 18>;
+        };
+
+        m_if {
+            bindings = <&macro_if>;
+            key-positions = <1 2>;
         };
     };
 
