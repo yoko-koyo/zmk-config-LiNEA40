@@ -226,8 +226,8 @@
            =========================================================== */
         // Backspace : 右手ホーム段 [K] + [L]
 
-        combo_bs {
-            bindings = <&kp BSPC>;
+        combo_minus {
+            bindings = <&kp MINUS>;
             key-positions = <16 17>;
         };
 
@@ -235,7 +235,7 @@
 
         combo_del {
             bindings = <&kp DEL>;
-            key-positions = <16 15>;
+            key-positions = <6 7>;
         };
 
         // Escape : 右手ホーム段 [K] + [右端キー]
@@ -412,8 +412,8 @@
         default_layer {
             bindings = <
 &kp Q        &kp W      &kp E    &kp R    &kp T                                                  &kp Y               &kp U  &kp I      &kp O     &kp P
-&kp A        &kp S      &kp D    &kp F    &kp G                                                  &kp H               &kp J  &kp K      &kp L     &kp MINUS
-&hm LSHFT X  &kp Z      &kp C    &kp V    &kp B                                                  &kp N               &kp M  &kp COMMA  &kp DOT   &hm RSHFT BSPC
+&kp A        &kp S      &kp D    &kp F    &kp G                                                  &kp H               &kp J  &kp K      &kp L     &kp BSPC
+&hm LSHFT X  &kp Z      &kp C    &kp V    &kp B                                                  &kp N               &kp M  &kp COMMA  &kp DOT   &hm RSHFT TAB
 &kp LALT     &kp LCTRL  &kp TAB  &kp INS  &hm_caps LCMD 0  &stl FUNCTION SPACE    &lt_k 3 ENTER  &lt_k NUMBER LANG1         &kp LBKT   &kp RBKT  &kp SLASH
             >;
 
@@ -435,10 +435,10 @@
 
         NUMBER {
             bindings = <
-&kp N1     &kp N2   &kp N3    &kp N4     &kp N5                       &kp N6    &kp N7    &kp N8  &kp N9     &kp N0
-&kp EQUAL  &kp SQT  &kp BSLH  &kp SLASH  &kp GRAVE                    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp SEMI
-&trans     &trans   &trans    &trans     &trans                       &kp DEL   &kp TAB   &trans  &trans     &trans
-&trans     &trans   &trans    &trans     &trans     &trans    &trans  &trans              &trans  &trans     &trans
+&kp N1     &kp N2     &kp N3    &kp N4     &kp N5                       &kp N6    &kp N7    &kp N8  &kp N9     &kp N0
+&kp MINUS  &kp EQUAL  &kp BSLH  &kp SLASH  &kp GRAVE                    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
+&trans     &kp X      &trans    &trans     &trans                       &kp SQT   &kp SEMI  &trans  &trans     &trans
+&trans     &trans     &trans    &trans     &trans     &trans    &trans  &trans              &trans  &trans     &trans
             >;
 
             sensor-bindings = <&re_kp C_VOL_DN C_VOL_UP>;
