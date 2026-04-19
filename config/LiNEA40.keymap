@@ -157,14 +157,14 @@
 
         CenterClick {
             bindings = <&mkp MB1>;
-            key-positions = <16 7>;
+            key-positions = <16 17>;
         };
 
         // 右クリック : 右手ホーム段 [J] + [K] の上段キー
 
         RightClick {
             bindings = <&mkp MB2>;
-            key-positions = <6 15>;
+            key-positions = <6 7>;
         };
 
         // Bluetoothレイヤー(6)呼び出し : 最下段3キー同時押し
@@ -228,14 +228,14 @@
 
         combo_minus {
             bindings = <&kp MINUS>;
-            key-positions = <16 17>;
+            key-positions = <16 17 7>;
         };
 
         // Delete : 右手上段端付近
 
         combo_eql {
             bindings = <&kp EQUAL>;
-            key-positions = <6 7>;
+            key-positions = <6 15>;
         };
 
         // Escape : 右手ホーム段 [K] + [右端キー]
