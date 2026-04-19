@@ -228,14 +228,14 @@
 
         combo_minus {
             bindings = <&kp MINUS>;
-            key-positions = <17 26>;
+            key-positions = <7 16>;
         };
 
         // Delete : 右手上段端付近
 
         combo_eql {
             bindings = <&kp EQUAL>;
-            key-positions = <7 16>;
+            key-positions = <17 26>;
         };
 
         // Escape : 右手ホーム段 [K] + [右端キー]
