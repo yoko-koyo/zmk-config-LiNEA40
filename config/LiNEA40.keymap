@@ -242,12 +242,17 @@
 
         combo_esc {
             bindings = <&kp ESC>;
-            key-positions = <16 18>;
+            key-positions = <8 16>;
         };
 
         m_if {
             bindings = <&macro_if>;
             key-positions = <1 2>;
+        };
+
+        minus {
+            bindings = <&kp MINUS>;
+            key-positions = <16 18>;
         };
     };
 
