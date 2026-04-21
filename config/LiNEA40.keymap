@@ -22,21 +22,21 @@
 // git pull | ./flash_r.sh 右用
 //mouse cursol
 
-&mmv {
-    delay-ms = <20>;
-    trigger-period-ms = <5>;
-    time-to-max-speed-ms = <100>;
-    acceleration-exponent = <2>;
-};
+// &mmv {
+//     delay-ms = <20>;
+//     trigger-period-ms = <5>;
+//     time-to-max-speed-ms = <100>;
+//     acceleration-exponent = <2>;
+// };
 
-//mouse scroll
+// //mouse scroll
 
-&msc {
-    delay-ms = <3>;
-    trigger-period-ms = <3>;
-    time-to-max-speed-ms = <100>;
-    acceleration-exponent = <30>;
-};
+// &msc {
+//     delay-ms = <3>;
+//     trigger-period-ms = <3>;
+//     time-to-max-speed-ms = <100>;
+//     acceleration-exponent = <30>;
+// };
 
 / {
     input_processors {
