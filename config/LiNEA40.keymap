@@ -171,7 +171,7 @@
 
         BluetoothLayer {
             bindings = <&mo WIRELESS>;
-            key-positions = <38 39 40>;
+            key-positions = <15 6 7 8>;
         };
 
         /* ============================================================
