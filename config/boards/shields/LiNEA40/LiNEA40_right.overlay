@@ -20,7 +20,7 @@
         zip_temp_layer: zip_temp_layer {
             compatible = "zmk,input-processor-temp-layer";
             #input-processor-cells = <2>;
-            require-prior-idle-ms = <220>;
+            require-prior-idle-ms = <100000>;
             /* クリックキーなどを押している間に解除されないようにする設定 */
             excluded-positions = <16 17 18>; 
         };
@@ -80,5 +80,3 @@
         scroll-layers = <5>;
     };
 };
-
-/* 重複定義を避けるため listener は一つにまとめました */
