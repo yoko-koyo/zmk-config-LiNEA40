@@ -481,6 +481,8 @@
 &trans  &trans  &trans  &trans  &trans                       &trans        &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &kp LG(W)  &kp LG(LEFT)          &trans  &trans  &trans
             >;
+
+            sensor-bindings = <&re_kp LA(LG(RIGHT)) LA(LG(LEFT))>;
         };
 
         //6 通信・システム設定
