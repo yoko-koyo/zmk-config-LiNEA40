@@ -249,6 +249,11 @@
             bindings = <&macro_if>;
             key-positions = <1 2>;
         };
+
+        combo_slash {
+            bindings = <&kp SLASH>;
+            key-positions = <26 27>;
+        };
     };
 
     behaviors {
