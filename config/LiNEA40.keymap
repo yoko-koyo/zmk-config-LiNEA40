@@ -186,7 +186,7 @@
 
         combo_brackets {
             bindings = <&macro_brackets>;
-            key-positions = <12 13>;
+            key-positions = <16 17 18>;
         };
 
         // { } : 右手下段 [M] + [,]
@@ -250,6 +250,11 @@
         combo_slash {
             bindings = <&kp SLASH>;
             key-positions = <26 27>;
+        };
+
+        z {
+            bindings = <&none>;
+            key-positions = <10 11>;
         };
     };
 
