@@ -161,7 +161,7 @@
 
         RightClick {
             bindings = <&mkp MB2>;
-            key-positions = <7 16>;
+            key-positions = <16 25>;
         };
 
         // Bluetoothレイヤー(6)呼び出し : 最下段3キー同時押し
@@ -259,7 +259,7 @@
 
         zz {
             bindings = <&kp Z>;
-            key-positions = <11 20>;
+            key-positions = <7 16>;
         };
     };
 
