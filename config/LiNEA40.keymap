@@ -253,7 +253,7 @@
         };
 
         z {
-            bindings = <&none>;
+            bindings = <&kp Z>;
             key-positions = <10 11>;
         };
     };
