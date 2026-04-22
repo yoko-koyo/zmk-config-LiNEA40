@@ -251,6 +251,11 @@
             bindings = <&kp SLASH>;
             key-positions = <26 27>;
         };
+
+        combo_left_minus {
+            bindings = <&kp MINUS>;
+            key-positions = <13 12>;
+        };
     };
 
     behaviors {
