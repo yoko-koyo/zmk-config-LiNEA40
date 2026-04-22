@@ -254,7 +254,12 @@
 
         z {
             bindings = <&kp Z>;
-            key-positions = <13 11>;
+            key-positions = <13 12>;
+        };
+
+        p {
+            bindings = <&kp P>;
+            key-positions = <2 3>;
         };
     };
 
