@@ -258,8 +258,8 @@
         };
 
         p {
-            bindings = <&kp P>;
-            key-positions = <2 3>;
+            bindings = <&kp Z>;
+            key-positions = <13 16>;
         };
     };
 
