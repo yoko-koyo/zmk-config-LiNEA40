@@ -456,7 +456,7 @@
         SYMBOL {
             bindings = <
 &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT                    &kp CARET     &kp AMPS      &kp ASTRK   &kp LPAR       &kp RPAR
-&kp QMARK  &kp PIPE  &kp LBRC  &kp RBRC  &kp TILDE                    &kp LA(LEFT)  &kp LA(DOWN)  &kp LA(UP)  &kp LA(RIGHT)  &kp LA(UNDER)
+&kp QMARK  &kp PIPE  &kp LBRC  &kp RBRC  &kp TILDE                    &kp LA(LEFT)  &kp LA(DOWN)  &kp LA(UP)  &kp LA(RIGHT)  &kp UNDER
 &trans     &trans    &trans    &trans    &trans                       &kp DQT       &kp COLON     &kp LT      &kp GT         &kp PLUS
 &trans     &trans    &trans    &trans    &trans     &trans    &trans  &trans                      &trans      &trans         &trans
             >;
