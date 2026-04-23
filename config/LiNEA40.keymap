@@ -257,8 +257,8 @@
             key-positions = <16 17>;
         };
 
-        tab {
-            bindings = <&kp TAB>;
+        altbs {
+            bindings = <&kp LA(BSPC)>;
             key-positions = <7 6>;
         };
     };
