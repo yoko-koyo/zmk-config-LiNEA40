@@ -208,14 +208,14 @@
 
         combo_squotes {
             bindings = <&macro_squotes>;
-            key-positions = <7 8>;
+            key-positions = <6 5>;
         };
 
         // " " : 左手ホーム段 [S] + [D]
 
         combo_dquotes {
             bindings = <&macro_dquotes>;
-            key-positions = <17 18>;
+            key-positions = <15 16>;
         };
 
         /* ============================================================
@@ -225,14 +225,14 @@
 
         combo_minus {
             bindings = <&kp MINUS>;
-            key-positions = <16 17>;
+            key-positions = <17 18>;
         };
 
         // Delete : 右手上段端付近
 
         combo_eql {
             bindings = <&kp EQUAL>;
-            key-positions = <6 7>;
+            key-positions = <7 8>;
         };
 
         // Escape : 右手ホーム段 [K] + [右端キー]
@@ -244,12 +244,22 @@
 
         m_if {
             bindings = <&macro_if>;
-            key-positions = <1 2>;
+            key-positions = <3 2>;
         };
 
         combo_slash {
             bindings = <&kp SLASH>;
             key-positions = <26 27>;
+        };
+
+        bs {
+            bindings = <&kp BSPC>;
+            key-positions = <16 17>;
+        };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <7 6>;
         };
     };
 
