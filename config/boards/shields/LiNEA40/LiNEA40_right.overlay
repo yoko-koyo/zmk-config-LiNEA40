@@ -34,7 +34,7 @@
 
         /* ここで定義した zip_temp_layer を呼び出す */
         /* 第1引数: マウスレイヤー番号(1)、第2引数: 解除までの時間(ms) */
-        input-processors = <&zip_temp_layer 1 2000>;
+        input-processors = <&zip_temp_layer 1 20000>;
     };
 };
 
