@@ -223,16 +223,16 @@
            =========================================================== */
         // Backspace : 右手ホーム段 [K] + [L]
 
-        combo_minus {
-            bindings = <&kp MINUS>;
+        combo_semi {
+            bindings = <&kp SEMI>;
             key-positions = <17 18>;
         };
 
         // Delete : 右手上段端付近
 
-        combo_eql {
-            bindings = <&kp EQUAL>;
-            key-positions = <7 8>;
+        combo_sql {
+            bindings = <&kp SQT>;
+            key-positions = <8 7>;
         };
 
         // Escape : 右手ホーム段 [K] + [右端キー]
@@ -424,9 +424,9 @@
         default_layer {
             bindings = <
 &kp Q        &kp W      &kp E     &kp R    &kp T                                                 &kp Y               &kp U  &kp I      &kp O     &kp P
-&kp A        &kp S      &kp D     &kp F    &kp G                                                 &kp H               &kp J  &kp K      &kp L     &kp BSPC
-&hm LSHFT X  &kp Z      &kp C     &kp V    &kp B                                                 &kp N               &kp M  &kp COMMA  &kp DOT   &hm RSHFT TAB
-&kp LALT     &kp LCTRL  &kp CAPS  &kp INS  &hm LCMD LANG2  &stl FUNCTION SPACE    &lt_k 3 ENTER  &lt_k NUMBER LANG1         &kp LBKT   &kp RBKT  &kp DEL
+&kp A        &kp S      &kp D     &kp F    &kp G                                                 &kp H               &kp J  &kp K      &kp L     &kp MINUS
+&hm LSHFT X  &kp Z      &kp C     &kp V    &kp B                                                 &kp N               &kp M  &kp COMMA  &kp DOT   &hm RSHFT EQUAL
+&kp LALT     &kp LCTRL  &kp CAPS  &kp INS  &hm LCMD LANG2  &stl FUNCTION SPACE    &lt_k 3 ENTER  &lt_k NUMBER LANG1         &kp LBKT   &kp RBKT  &kp SLASH
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
@@ -449,7 +449,7 @@
             bindings = <
 &kp N1     &kp N2    &kp N3   &kp N4    &kp N5                       &kp N6    &kp N7    &kp N8  &kp N9     &kp N0
 &kp SLASH  &kp BSLH  &kp SQT  &kp SEMI  &kp GRAVE                    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
-&trans     &trans    &trans   &trans    &trans                       &kp SQT   &kp SEMI  &trans  &trans     &trans
+&trans     &trans    &trans   &trans    &trans                       &kp BSPC  &kp TAB   &trans  &trans     &trans
 &trans     &trans    &trans   &trans    &trans     &trans    &trans  &trans              &trans  &trans     &trans
             >;
 
@@ -462,7 +462,7 @@
             bindings = <
 &kp EXCL   &kp AT    &kp HASH  &kp DLLR   &kp PRCNT                    &kp CARET     &kp AMPS      &kp ASTRK   &kp LPAR       &kp RPAR
 &kp QMARK  &kp PIPE  &kp DQT   &kp COLON  &kp TILDE                    &kp LA(LEFT)  &kp LA(DOWN)  &kp LA(UP)  &kp LA(RIGHT)  &trans
-&trans     &trans    &trans    &trans     &trans                       &kp DQT       &kp COLON     &kp LT      &kp GT         &trans
+&trans     &trans    &trans    &trans     &trans                       &trans        &trans        &kp LT      &kp GT         &trans
 &trans     &trans    &trans    &trans     &trans     &trans    &trans  &trans                      &trans      &trans         &trans
             >;
 
