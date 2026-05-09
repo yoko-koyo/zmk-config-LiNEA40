@@ -261,6 +261,11 @@
             bindings = <&kp LA(BSPC)>;
             key-positions = <7 6>;
         };
+
+        combo_si {
+            bindings = <&kp GRAVE>;
+            key-positions = <26 25>;
+        };
     };
 
     behaviors {
