@@ -3,7 +3,7 @@
 # --- 設定 ---
 TARGET="linea40_r"
 UF2_PATH="./build/${TARGET}/zephyr/zmk.uf2"
-DRIVE_NAME="NO NAME" 
+DRIVE_NAME="XIAO-SENSE" 
 
 echo "========================================"
 echo "👉 右手側 (linea40_r) のビルドを開始します..."
