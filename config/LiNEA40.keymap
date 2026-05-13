@@ -253,7 +253,7 @@
         };
 
         bs {
-            bindings = <&kp LANG2>;
+            bindings = <&kp LANG1>;
             key-positions = <16 17>;
         };
 
@@ -263,7 +263,7 @@
         };
 
         l2 {
-            bindings = <&kp LANG1>;
+            bindings = <&kp LANG2>;
             key-positions = <13 12>;
         };
     };
