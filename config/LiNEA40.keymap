@@ -253,18 +253,18 @@
         };
 
         bs {
-            bindings = <&kp BSPC>;
+            bindings = <&kp LANG1>;
             key-positions = <16 17>;
-        };
-
-        altbs {
-            bindings = <&kp LA(BSPC)>;
-            key-positions = <7 6>;
         };
 
         combo_si {
             bindings = <&kp GRAVE>;
             key-positions = <26 25>;
+        };
+
+        l2 {
+            bindings = <&kp LANG1>;
+            key-positions = <13 12>;
         };
     };
 
@@ -428,10 +428,10 @@
 
         default_layer {
             bindings = <
-&kp Q        &kp W      &kp E     &kp R    &kp T                                                 &kp Y               &kp U  &kp I      &kp O     &kp P
-&kp A        &kp S      &kp D     &kp F    &kp G                                                 &kp H               &kp J  &kp K      &kp L     &kp MINUS
-&hm LSHFT X  &kp Z      &kp C     &kp V    &kp B                                                 &kp N               &kp M  &kp COMMA  &kp DOT   &hm RSHFT EQUAL
-&kp LALT     &kp LCTRL  &kp CAPS  &kp INS  &hm LCMD LANG2  &stl FUNCTION SPACE    &lt_k 3 ENTER  &lt_k NUMBER LANG1         &kp LBKT   &kp RBKT  &kp SLASH
+&kp Q       &kp W     &kp E           &kp R    &kp T                                                     &kp Y              &kp U  &kp I      &kp O     &kp P
+&kp A       &kp S     &kp D           &kp F    &kp G                                                     &kp H              &kp J  &kp K      &kp L     &hm LEFT_SHIFT MINUS
+&kp Z       &kp X     &kp C           &kp V    &kp B                                                     &kp N              &kp M  &kp COMMA  &kp DOT   &hm RSHFT EQUAL
+&kp LSHIFT  &kp LALT  &hm LCTRL CAPS  &kp INS  &hm LCMD LG(SPACE)  &stl FUNCTION SPACE    &lt_k 3 ENTER  &lt_k NUMBER BSPC         &kp LBKT   &kp RBKT  &kp SLASH
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
