@@ -454,10 +454,10 @@
 &kp Q       &kp W     &kp E           &kp R    &kp T                                           &kp Y              &kp U  &kp I      &kp O     &kp P
 &kp A       &kp S     &kp D           &kp F    &kp G                                           &kp H              &kp J  &kp K      &kp L     &kp MINUS
 &kp Z       &kp X     &kp C           &kp V    &kp B                                           &kp N              &kp M  &kp COMMA  &kp DOT   &hm RSHFT EQUAL
-&kp LSHIFT  &kp LALT  &hm LCTRL CAPS  &kp INS  &gui_ctrl_space LGUI 0  &stl FUNCTION SPACE    &lt_k 3 ENTER  &lt_k NUMBER BSPC         &kp LBKT   &kp RBKT  &kp SLASH
+&kp LSHIFT  &kp LALT  &hm LCTRL CAPS  &kp INS  &kp LGUI  &stl FUNCTION SPACE    &lt_k 3 ENTER  &lt_k NUMBER BSPC         &kp LBKT   &kp RBKT  &kp SLASH
             >;
 
-            sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&re_kp LANG2 LANG1>;
         };
 
         //1 マウス操作用
@@ -469,6 +469,8 @@
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans      &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans            &trans    &trans      &trans
             >;
+
+            sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
         };
 
         //2 数字・基本記号・矢印キー
@@ -481,7 +483,7 @@
 &trans     &trans    &trans   &trans    &trans     &trans    &trans  &trans              &trans  &trans     &trans
             >;
 
-            sensor-bindings = <&re_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
         };
 
         //3 NUMBERのOption(Alt)付き矢印
@@ -494,7 +496,7 @@
 &trans     &trans    &trans    &trans     &trans     &trans    &trans  &trans                      &trans      &trans         &trans
             >;
 
-            sensor-bindings = <&re_kp C_BRI_DN C_BRI_UP>;
+            sensor-bindings = <&re_kp C_VOL_DN C_VOL_UP>;
         };
 
         //4 F1〜F12・テンキー
@@ -520,7 +522,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &kp LG(W)  &kp LG(LEFT)          &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&re_kp LA(LG(RIGHT)) LA(LG(LEFT))>;
+            sensor-bindings = <&re_kp C_BRI_DN C_BRI_UP>;
         };
 
         //6 通信・システム設定
