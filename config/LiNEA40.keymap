@@ -456,8 +456,6 @@
 &kp Z       &kp X     &kp C           &kp V    &kp B                                           &kp N              &kp M  &kp COMMA  &kp DOT   &hm RSHFT EQUAL
 &kp LSHIFT  &kp LALT  &hm LCTRL CAPS  &kp INS  &kp LGUI  &stl FUNCTION SPACE    &lt_k 3 ENTER  &lt_k NUMBER BSPC         &kp LBKT   &kp RBKT  &kp SLASH
             >;
-
-            sensor-bindings = <&re_kp LANG2 LANG1>;
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
         };
 
@@ -470,8 +468,6 @@
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans      &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans            &trans    &trans      &trans
             >;
-
-            sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
         };
 
         //2 数字・基本記号・矢印キー
@@ -484,7 +480,7 @@
 &trans     &trans    &trans   &trans    &trans     &trans    &trans  &trans              &trans  &trans     &trans
             >;
 
-            sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&re_kp C_VOL_DN C_VOL_UP>;
         };
 
         //3 NUMBERのOption(Alt)付き矢印
@@ -497,7 +493,7 @@
 &trans     &trans    &trans    &trans     &trans     &trans    &trans  &trans                      &trans      &trans         &trans
             >;
 
-            sensor-bindings = <&re_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&re_kp C_BRI_DN C_BRI_UP>;
         };
 
         //4 F1〜F12・テンキー
@@ -509,8 +505,6 @@
 &trans  &trans  &trans  &kp F11  &kp F12                    &kp UNDER  &kp N1  &kp N2  &kp N3  &trans
 &trans  &trans  &trans  &trans   &trans   &trans    &trans  &trans             &trans  &trans  &trans
             >;
-
-            sensor-bindings = <&re_kp C_BRI_DN C_BRI_UP>;
         };
 
         //5 スクロール操作用
