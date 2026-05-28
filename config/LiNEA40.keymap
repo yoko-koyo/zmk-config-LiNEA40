@@ -264,8 +264,8 @@
             key-positions = <26 27>;
         };
 
-        bs {
-            bindings = <&kp LANG1>;
+        tab {
+            bindings = <&kp TAB>;
             key-positions = <16 17>;
         };
 
@@ -274,8 +274,8 @@
             key-positions = <26 25>;
         };
 
-        l2 {
-            bindings = <&kp LANG2>;
+        del {
+            bindings = <&kp DEL>;
             key-positions = <13 12>;
         };
     };
@@ -458,6 +458,7 @@
             >;
 
             sensor-bindings = <&re_kp LANG2 LANG1>;
+            sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
         };
 
         //1 マウス操作用
@@ -479,7 +480,7 @@
             bindings = <
 &kp N1     &kp N2    &kp N3   &kp N4    &kp N5                       &kp N6    &kp N7    &kp N8  &kp N9     &kp N0
 &kp SLASH  &kp BSLH  &kp SQT  &kp SEMI  &kp GRAVE                    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
-&trans     &trans    &trans   &trans    &trans                       &kp BSPC  &kp TAB   &trans  &trans     &trans
+&trans     &trans    &trans   &trans    &trans                       &kp LANG1  &kp LANG2   &trans  &trans     &trans
 &trans     &trans    &trans   &trans    &trans     &trans    &trans  &trans              &trans  &trans     &trans
             >;
 
@@ -506,7 +507,7 @@
 &kp F1  &kp F2  &kp F3  &kp F4   &kp F5                     &kp ASTRK  &kp N7  &kp N8  &kp N9  &kp N0
 &kp F6  &kp F7  &kp F8  &kp F9   &kp F10                    &kp SLASH  &kp N4  &kp N5  &kp N6  &trans
 &trans  &trans  &trans  &kp F11  &kp F12                    &kp UNDER  &kp N1  &kp N2  &kp N3  &trans
-&trans  &trans  &trans  &trans   &trans   &trans    &trans  &kp N0             &trans  &trans  &trans
+&trans  &trans  &trans  &trans   &trans   &trans    &trans  &trans             &trans  &trans  &trans
             >;
 
             sensor-bindings = <&re_kp C_BRI_DN C_BRI_UP>;
