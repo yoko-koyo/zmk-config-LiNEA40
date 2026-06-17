@@ -253,12 +253,12 @@
 
         combo_esc {
             bindings = <&kp ESC>;
-            key-positions = <13 11>;
+            key-positions = <6 8>;
         };
 
         m_if {
             bindings = <&macro_if>;
-            key-positions = <13 12>;
+            key-positions = <16 19>;
         };
 
         combo_slash {
