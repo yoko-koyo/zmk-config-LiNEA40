@@ -239,12 +239,12 @@
 
         combo_m_if {
             bindings = <&macro_if>;
-            key-positions = <16 19>;
+            key-positions = <16 17 13 12>;
         };
 
         combo_esc {
             bindings = <&kp ESC>;
-            key-positions = <13 11>;
+            key-positions = <18 16>;
         };
 
         combo_bspc {
