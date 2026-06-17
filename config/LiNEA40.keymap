@@ -252,6 +252,16 @@
             key-positions = <16 18>;
             timeout-ms = <60>;
         };
+
+        lshift {
+            bindings = <&kp LSHIFT>;
+            key-positions = <10 11>;
+        };
+
+        rshift {
+            bindings = <&kp RSHIFT>;
+            key-positions = <19 18>;
+        };
     };
 
     behaviors {
