@@ -249,7 +249,7 @@
 
         combo_bspc {
             bindings = <&kp BSPC>;
-            key-positions = <16 18>;
+            key-positions = <18 19>;
             timeout-ms = <60>;
         };
 
