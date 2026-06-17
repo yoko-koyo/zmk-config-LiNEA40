@@ -193,28 +193,28 @@
 
         combo_parens {
             bindings = <&macro_parens>;
-            key-positions = <6 7 8>;
+            key-positions = <7 8>;
         };
 
         // [ ] : 右手ホーム段 [J] + [K]
 
         combo_brackets {
             bindings = <&macro_brackets>;
-            key-positions = <16 17 18>;
+            key-positions = <17 18>;
         };
 
         // { } : 右手下段 [M] + [,]
 
         combo_braces {
             bindings = <&macro_braces>;
-            key-positions = <26 27 28>;
+            key-positions = <27 28>;
         };
 
         // < > : 右手下段 [,] + [.]
 
         combo_angles {
             bindings = <&macro_angles>;
-            key-positions = <27 28>;
+            key-positions = <28 26>;
         };
 
         /* --- 左手側：引用符 --- */
@@ -222,14 +222,14 @@
 
         combo_squotes {
             bindings = <&macro_squotes>;
-            key-positions = <6 5>;
+            key-positions = <>;
         };
 
         // " " : 左手ホーム段 [S] + [D]
 
         combo_dquotes {
             bindings = <&macro_dquotes>;
-            key-positions = <15 16>;
+            key-positions = <>;
         };
 
         /* ============================================================
@@ -239,26 +239,26 @@
 
         combo_semi {
             bindings = <&kp SEMI>;
-            key-positions = <17 18>;
+            key-positions = <17 16>;
         };
 
         // Delete : 右手上段端付近
 
         combo_sql {
             bindings = <&kp SQT>;
-            key-positions = <8 7>;
+            key-positions = <6 7>;
         };
 
         // Escape : 右手ホーム段 [K] + [右端キー]
 
         combo_esc {
             bindings = <&kp ESC>;
-            key-positions = <18 16>;
+            key-positions = <13 11>;
         };
 
         m_if {
             bindings = <&macro_if>;
-            key-positions = <3 2>;
+            key-positions = <13 12>;
         };
 
         combo_slash {
@@ -268,7 +268,8 @@
 
         tab {
             bindings = <&kp BSPC>;
-            key-positions = <16 17>;
+            key-positions = <16 18>;
+            timeout-ms = <60>;
         };
 
         combo_si {
@@ -499,10 +500,10 @@
 
         FUNCTION {
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4   &kp F5                           &kp ASTRK  &kp N7  &kp N8  &kp N9  &kp N0
-&kp F6  &kp F7  &kp F8  &kp F9   &kp F10                          &kp SLASH  &kp N4  &kp N5  &kp N6  &trans
-&trans  &trans  &trans  &kp F11  &kp F12                          &kp UNDER  &kp N1  &kp N2  &kp N3  &trans
-&trans  &trans  &trans  &trans   &trans   &trans    &kp LA(BSPC)  &kp BSPC           &trans  &trans  &trans
+&kp F1  &kp F2  &kp F3  &kp F4   &kp F5                     &kp ASTRK  &kp N7  &kp N8  &kp N9  &kp N0
+&kp F6  &kp F7  &kp F8  &kp F9   &kp F10                    &kp SLASH  &kp N4  &kp N5  &kp N6  &trans
+&trans  &trans  &trans  &kp F11  &kp F12                    &kp UNDER  &kp N1  &kp N2  &kp N3  &trans
+&trans  &trans  &trans  &trans   &trans   &trans    &trans  &trans             &trans  &trans  &trans
             >;
         };
 
