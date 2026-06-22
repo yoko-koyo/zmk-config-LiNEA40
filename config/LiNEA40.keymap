@@ -465,10 +465,10 @@
 
         NUMBER {
             bindings = <
-&kp N1    &kp N2    &kp N3    &kp N4    &kp N5                     &kp N6    &kp N7    &kp N8  &kp N9     &kp N0
-&kp LPAR  &kp RPAR  &kp LBKT  &kp RBKT  &kp ESC                    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp ENTER
-&trans    &trans    &trans    &trans    &trans                     &kp DEL   &kp TAB   &trans  &trans     &trans
-&trans    &trans    &trans    &trans    &trans   &trans    &trans  &trans              &trans  &trans     &trans
+&kp N1     &kp N2    &kp N3    &kp N4    &kp N5                     &kp N6    &kp N7    &kp N8  &kp N9     &kp N0
+&kp QMARK  &kp EXCL  &kp LBKT  &kp RBKT  &kp ESC                    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp ENTER
+&trans     &trans    &kp LPAR  &kp RPAR  &trans                     &kp DEL   &kp TAB   &trans  &trans     &trans
+&trans     &trans    &trans    &trans    &trans   &trans    &trans  &trans              &trans  &trans     &trans
             >;
 
             sensor-bindings = <&re_kp C_VOL_DN C_VOL_UP>;
