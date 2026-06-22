@@ -242,14 +242,14 @@
             key-positions = <16 17 13 12>;
         };
 
-        combo_esc {
-            bindings = <&kp ESC>;
+        combo_enter {
+            bindings = <&kp ENTER>;
             key-positions = <18 16>;
         };
 
         combo_bspc {
             bindings = <&kp BSPC>;
-            key-positions = <18 19>;
+            key-positions = <>;
             timeout-ms = <60>;
         };
 
@@ -441,10 +441,10 @@
 
         default_layer {
             bindings = <
-&kp Q       &kp W     &kp E           &kp R    &kp T                                                 &kp Y               &kp U  &kp I      &kp O     &kp P
-&kp A       &kp S     &kp D           &kp F    &kp G                                                 &kp H               &kp J  &kp K      &kp L     &kp MINUS
-&kp Z       &kp X     &kp C           &kp V    &kp B                                                 &kp N               &kp M  &kp COMMA  &kp DOT   &hm RSHFT EQUAL
-&kp LSHIFT  &kp LALT  &hm LCTRL CAPS  &kp INS  &hm LGUI LANG2  &stl FUNCTION SPACE    &lt_k 3 ENTER  &lt_k NUMBER LANG1         &kp LBKT   &kp RBKT  &kp BSPC
+&kp Q     &kp W      &kp E      &kp R       &kp T                                            &kp Y               &kp U  &kp I      &kp O     &kp P
+&kp A     &kp S      &kp D      &kp F       &kp G                                            &kp H               &kp J  &kp K      &kp L     &kp MINUS
+&kp Z     &kp X      &kp C      &kp V       &kp B                                            &kp N               &kp M  &kp COMMA  &kp DOT   &hm RSHFT EQUAL
+&kp LALT  &kp LCTRL  &lt 3 ESC  &kp LSHIFT  &hm LGUI LANG2  &stl FUNCTION SPACE    &kp BSPC  &lt_k NUMBER LANG1         &kp LBKT   &kp RBKT  &kp ESC
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
