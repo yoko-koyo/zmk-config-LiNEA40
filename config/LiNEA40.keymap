@@ -242,8 +242,8 @@
             key-positions = <16 17 13 12>;
         };
 
-        combo_enter {
-            bindings = <&kp ENTER>;
+        combo_esc {
+            bindings = <&kp ESC>;
             key-positions = <18 16>;
         };
 
@@ -441,10 +441,10 @@
 
         default_layer {
             bindings = <
-&kp Q     &kp W      &kp E      &kp R       &kp T                                            &kp Y               &kp U  &kp I      &kp O     &kp P
-&kp A     &kp S      &kp D      &kp F       &kp G                                            &kp H               &kp J  &kp K      &kp L     &kp MINUS
-&kp Z     &kp X      &kp C      &kp V       &kp B                                            &kp N               &kp M  &kp COMMA  &kp DOT   &hm RSHFT EQUAL
-&kp LALT  &kp LCTRL  &lt 3 ESC  &kp LSHIFT  &hm LGUI LANG2  &stl FUNCTION SPACE    &kp BSPC  &lt_k NUMBER LANG1         &kp LBKT   &kp RBKT  &kp ESC
+&kp Q       &kp W      &kp E  &kp R     &kp T                                            &kp Y               &kp U  &kp I      &kp O     &kp P
+&kp A       &kp S      &kp D  &kp F     &kp G                                            &kp H               &kp J  &kp K      &kp L     &hm RALT MINUS
+&kp Z       &kp X      &kp C  &kp V     &kp B                                            &kp N               &kp M  &kp COMMA  &kp DOT   &hm RCTRL EQUAL
+&kp LSHIFT  &kp LCTRL  &mo 3  &kp LALT  &hm LGUI LANG2  &stl FUNCTION SPACE    &kp BSPC  &lt_k NUMBER LANG1         &kp LBKT   &kp RBKT  &kp RSHIFT
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
