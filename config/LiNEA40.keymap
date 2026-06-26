@@ -444,7 +444,7 @@
 &kp Q       &kp W      &kp E  &kp R     &kp T                                             &kp Y               &kp U  &kp I      &kp O     &kp P
 &kp A       &kp S      &kp D  &kp F     &kp G                                             &kp H               &kp J  &kp K      &kp L     &kp MINUS
 &kp Z       &kp X      &kp C  &kp V     &kp B                                             &kp N               &kp M  &kp COMMA  &kp DOT   &kp EQUAL
-&kp LSHIFT  &kp LCTRL  &mo 3  &kp LALT  &hm LGUI LANG2  &stl FUNCTION SPACE    &lt 3 RET  &lt_k NUMBER LANG1         &kp LBKT   &kp RBKT  &hm RSHIFT RET
+&kp LSHIFT  &kp LCTRL  &mo 3  &kp LALT  &hm LGUI LANG2  &stl FUNCTION SPACE    &lt 3 RET  &lt_k NUMBER LANG1         &kp LBKT   &kp RBKT  &hm RSHIFT BSPC
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
@@ -466,8 +466,8 @@
         NUMBER {
             bindings = <
 &kp N1    &kp N2     &kp N3    &kp N4    &kp N5                      &kp N6    &kp N7    &kp N8  &kp N9     &kp N0
-&kp LALT  &kp LCTRL  &kp LBKT  &kp RBKT  &kp BSPC                    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp BSPC
-&trans    &trans     &kp LPAR  &kp RPAR  &kp DEL                     &kp ESC   &kp TAB   &trans  &trans     &trans
+&kp LALT  &kp LCTRL  &kp LBKT  &kp RBKT  &kp BSPC                    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp TAB
+&trans    &trans     &kp LPAR  &kp RPAR  &kp DEL                     &kp TAB   &kp BSPC  &trans  &trans     &trans
 &trans    &trans     &trans    &trans    &trans    &trans    &trans  &trans              &trans  &trans     &trans
             >;
 
