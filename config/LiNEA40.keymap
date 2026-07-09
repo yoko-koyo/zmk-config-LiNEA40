@@ -242,8 +242,8 @@
             key-positions = <16 17 13 12>;
         };
 
-        combo_esc {
-            bindings = <&kp ESC>;
+        combo_bs {
+            bindings = <&kp BSPC>;
             key-positions = <18 16>;
         };
 
