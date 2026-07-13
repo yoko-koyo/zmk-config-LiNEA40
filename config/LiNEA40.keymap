@@ -257,6 +257,16 @@
             bindings = <&kp BSLH>;
             key-positions = <25 26>;
         };
+
+        l {
+            bindings = <&kp LSHFT>;
+            key-positions = <11 10>;
+        };
+
+        r {
+            bindings = <&kp RSHFT>;
+            key-positions = <18 19>;
+        };
     };
 
     behaviors {
