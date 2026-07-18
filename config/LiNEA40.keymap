@@ -249,7 +249,7 @@
 
         combo_esc {
             bindings = <&kp ESC>;
-            key-positions = <16 15>;
+            key-positions = <>;
             timeout-ms = <60>;
         };
 
