@@ -219,12 +219,12 @@
 
         combo_sqt {
             bindings = <&kp SQT>;
-            key-positions = <7 6>;
+            key-positions = <7 8>;
         };
 
         combo_semi {
             bindings = <&kp SEMI>;
-            key-positions = <17 16>;
+            key-positions = <17 18>;
         };
 
         combo_slash {
@@ -234,7 +234,7 @@
 
         combo_grave {
             bindings = <&kp GRAVE>;
-            key-positions = <7 8>;
+            key-positions = <7 6>;
         };
 
         combo_m_if {
@@ -244,7 +244,7 @@
 
         combo_bs {
             bindings = <&kp BSPC>;
-            key-positions = <17 18>;
+            key-positions = <17 16>;
         };
 
         combo_esc {
@@ -255,7 +255,7 @@
 
         combo_back_slash {
             bindings = <&kp BSLH>;
-            key-positions = <27 26>;
+            key-positions = <15 16>;
         };
 
         l {
