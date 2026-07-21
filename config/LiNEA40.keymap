@@ -229,7 +229,7 @@
 
         combo_slash {
             bindings = <&kp SLASH>;
-            key-positions = <26 27>;
+            key-positions = <27 28>;
         };
 
         combo_grave {
@@ -255,7 +255,7 @@
 
         combo_back_slash {
             bindings = <&kp BSLH>;
-            key-positions = <28 27>;
+            key-positions = <27 26>;
         };
 
         l {
