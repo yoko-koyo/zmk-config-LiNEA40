@@ -168,7 +168,7 @@
 
         CenterClick {
             bindings = <&mkp MB1>;
-            key-positions = <13 12>;
+            key-positions = <12 11>;
         };
 
         // 右クリック : 右手ホーム段 [J] + [K] の上段キー
@@ -266,6 +266,11 @@
         r {
             bindings = <&kp RSHFT>;
             key-positions = <>;
+        };
+
+        bs {
+            bindings = <&kp BSPC>;
+            key-positions = <12 13>;
         };
     };
 
