@@ -483,10 +483,10 @@
 
         SYMBOL {
             bindings = <
-&kp EXCL      &kp AT         &kp HASH       &kp DLLR       &kp PRCNT                          &kp CARET     &kp AMPS  &kp ASTRK     &kp LPAR       &kp RPAR
-&kp C_BRI_DN  &kp C_BRI_INC  &macro_parens  &macro_braces  &macro_brackets                    &kp LA(LEFT)  &kp BSPC  &kp LA(BSPC)  &kp LA(RIGHT)  &trans
-&kp C_VOL_DN  &kp C_VOL_UP   &trans         &trans         &trans                             &trans        &trans    &trans        &trans         &trans
-&trans        &trans         &trans         &trans         &trans           &trans    &trans  &trans                  &trans        &trans         &trans
+&kp EXCL      &kp AT         &kp HASH       &kp DLLR       &kp PRCNT                          &kp CARET     &kp AMPS      &kp ASTRK   &kp LPAR       &kp RPAR
+&kp C_BRI_DN  &kp C_BRI_INC  &macro_parens  &macro_braces  &macro_brackets                    &kp LC(LEFT)  &kp LC(DOWN)  &kp LC(UP)  &kp LC(RIGHT)  &trans
+&kp C_VOL_DN  &kp C_VOL_UP   &trans         &trans         &trans                             &trans        &trans        &trans      &trans         &trans
+&trans        &trans         &trans         &trans         &trans           &trans    &trans  &trans                      &trans      &trans         &trans
             >;
 
             sensor-bindings = <&re_kp C_BRI_DN C_BRI_UP>;
