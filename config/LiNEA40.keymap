@@ -168,14 +168,14 @@
 
         CenterClick {
             bindings = <&mkp MB1>;
-            key-positions = <12 11>;
+            key-positions = <>;
         };
 
         // 右クリック : 右手ホーム段 [J] + [K] の上段キー
 
         RightClick {
             bindings = <&mkp MB2>;
-            key-positions = <2 3>;
+            key-positions = <>;
         };
 
         // Bluetoothレイヤー(6)呼び出し : 最下段3キー同時押し
@@ -269,7 +269,7 @@
         };
 
         bs {
-            bindings = <&kp BSPC>;
+            bindings = <&kp LANG1>;
             key-positions = <12 13>;
         };
     };
@@ -460,7 +460,7 @@
 &kp Q       &kp W     &kp E      &kp R          &kp T                                   &kp Y              &kp U  &kp I             &kp O              &kp P
 &kp A       &kp S     &kp D      &kp F          &kp G                                   &kp H              &kp J  &kp K             &kp L              &kp MINUS
 &kp Z       &kp X     &kp C      &kp V          &kp B                                   &kp N              &kp M  &kp COMMA         &kp DOT            &st RSHIFT EQUAL
-&kp LSHIFT  &kp LALT  &kp LCTRL  &lt_k 3 LANG1  &gui_en LGUI 0  &kp SPACE    &lt 4 RET  &lt_k NUMBER BSPC         &kp LA(LS(LEFT))  &kp LA(LS(RIGHT))  &hm RSHIFT BSPC
+&kp LSHIFT  &kp LALT  &kp LCTRL  &lt_k 3 LANG1  &hm LGUI LANG2  &kp SPACE    &lt 4 RET  &lt_k NUMBER BSPC         &kp LA(LS(LEFT))  &kp LA(LS(RIGHT))  &hm RSHIFT BSPC
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
@@ -483,7 +483,7 @@
             bindings = <
 &kp N1     &kp N2    &kp N3    &kp N4    &kp N5                           &kp N6    &kp N7    &kp N8  &kp N9     &kp N0
 &kp SLASH  &kp BSLH  &kp LBKT  &kp RBKT  &macro_braces                    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
-&trans     &trans    &kp LPAR  &kp RPAR  &macro_parens                    &kp ESC   &kp TAB   &trans  &trans     &trans
+&kp QMARK  &kp PIPE  &kp LPAR  &kp RPAR  &macro_parens                    &kp ESC   &kp TAB   &trans  &trans     &trans
 &trans     &trans    &trans    &trans    &trans         &trans    &trans  &trans              &trans  &trans     &trans
             >;
 
