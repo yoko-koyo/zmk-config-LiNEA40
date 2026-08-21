@@ -270,7 +270,12 @@
 
         bs {
             bindings = <&kp LANG1>;
-            key-positions = <12 13>;
+            key-positions = <13 16>;
+        };
+
+        l2 {
+            bindings = <&kp LANG2>;
+            key-positions = <12 17>;
         };
     };
 
