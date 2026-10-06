@@ -164,57 +164,12 @@
         /* ============================================================
            CATEGORY: MOUSE & SYSTEM (CamelCase)
            =========================================================== */
-        // 左クリック : 右手ホーム段 [J] + [K]
-
-        CenterClick {
-            bindings = <&mkp MB1>;
-            key-positions = <>;
-        };
-
-        // 右クリック : 右手ホーム段 [J] + [K] の上段キー
-
-        RightClick {
-            bindings = <&mkp MB2>;
-            key-positions = <>;
-        };
 
         // Bluetoothレイヤー(6)呼び出し : 最下段3キー同時押し
 
         BluetoothLayer {
             bindings = <&mo WIRELESS>;
             key-positions = <39 40 38>;
-        };
-
-        combo_parens {
-            bindings = <&macro_parens>;
-            key-positions = <>;
-        };
-
-        combo_brackets {
-            bindings = <&macro_brackets>;
-            key-positions = <>;
-        };
-
-        combo_braces {
-            bindings = <&macro_braces>;
-            key-positions = <>;
-        };
-
-        // < > : 右手下段 [,] + [.]
-
-        combo_angles {
-            bindings = <&macro_angles>;
-            key-positions = <>;
-        };
-
-        combo_squotes {
-            bindings = <&macro_squotes>;
-            key-positions = <>;
-        };
-
-        combo_dquotes {
-            bindings = <&macro_dquotes>;
-            key-positions = <>;
         };
 
         combo_sqt {
@@ -242,11 +197,6 @@
             key-positions = <16 17 13 12>;
         };
 
-        combo_bs {
-            bindings = <&kp BSPC>;
-            key-positions = <>;
-        };
-
         combo_esc {
             bindings = <&kp ESC>;
             key-positions = <16 18>;
@@ -256,16 +206,6 @@
         combo_back_slash {
             bindings = <&kp BSLH>;
             key-positions = <15 16>;
-        };
-
-        l {
-            bindings = <&kp LSHFT>;
-            key-positions = <>;
-        };
-
-        r {
-            bindings = <&kp RSHFT>;
-            key-positions = <>;
         };
 
         bs {
