@@ -164,7 +164,6 @@
         /* ============================================================
            CATEGORY: MOUSE & SYSTEM (CamelCase)
            =========================================================== */
-
         // Bluetoothレイヤー(6)呼び出し : 最下段3キー同時押し
 
         BluetoothLayer {
@@ -402,10 +401,10 @@
 
         default_layer {
             bindings = <
-&kp Q         &kp W        &kp E      &kp R               &kp T                                          &kp Y               &kp U  &kp I      &kp O      &kp P
-&st LALT A    &kp S        &kp D      &kp F               &kp G                                          &kp H               &kp J  &kp K      &kp L      &kp RET
-&st LSHIFT Z  &st LCTRL X  &kp C      &kp V               &kp B                                          &kp N               &kp M  &kp COMMA  &kp DOT    &st RSHIFT TAB
-&kp LALT      &kp LALT     &kp LCTRL  &lt_k SYMBOL MINUS  &hm LGUI LANG2  &stl FUNCTION SPACE  &kp BSPC  &lt_k NUMBER LANG1         &kp MINUS  &kp EQUAL  &hm RSHIFT ESC
+&kp Q         &kp W        &kp E      &kp R               &kp T                                            &kp Y               &kp U  &kp I      &kp O      &kp P
+&st LALT A    &kp S        &kp D      &kp F               &kp G                                            &kp H               &kp J  &kp K      &kp L      &kp RET
+&st LSHIFT Z  &st LCTRL X  &kp C      &kp V               &kp B                                            &kp N               &kp M  &kp COMMA  &kp DOT    &st RSHIFT TAB
+&kp LALT      &kp LALT     &kp LCTRL  &lt_k SYMBOL MINUS  &hm LGUI LANG2  &stl FUNCTION SPACE    &kp BSPC  &lt_k NUMBER LANG1         &kp MINUS  &kp EQUAL  &hm RSHIFT ESC
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
@@ -426,10 +425,10 @@
 
         NUMBER {
             bindings = <
-&kp N1     &kp N2    &kp N3    &kp N4    &kp N5                           &kp N6    &kp N7    &kp N8  &kp N9     &kp N0
-&trans     &trans    &kp EQUAL &kp MINUS  &macro_braces                    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
-&trans     &trans    &kp PLUS  &kp UNDER   &macro_parens                    &kp ESC   &kp TAB   &trans  &trans     &trans
-&trans     &trans    &trans    &trans    &trans         &trans    &trans  &trans              &trans  &trans     &trans
+&kp N1  &kp N2  &kp N3     &kp N4     &kp N5                           &kp N6     &kp N7     &kp N8  &kp N9     &kp N0
+&trans  &trans  &kp EQUAL  &kp MINUS  &macro_braces                    &kp LEFT   &kp DOWN   &kp UP  &kp RIGHT  &trans
+&trans  &trans  &kp PLUS   &kp UNDER  &macro_parens                    &kp EQUAL  &kp MINUS  &trans  &trans     &trans
+&trans  &trans  &trans     &trans     &trans         &trans    &trans  &trans                &trans  &trans     &trans
             >;
 
             sensor-bindings = <&re_kp C_VOL_DN C_VOL_UP>;
@@ -439,10 +438,10 @@
 
         SYMBOL {
             bindings = <
-&kp EXCL   &kp AT     &kp HASH       &kp DLLR       &kp PRCNT                          &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR   &kp RPAR
-&kp GRAVE  &kp TILDE  &kp LBKT       &kp RBKT       &macro_brackets                    &kp SQT    &kp DQT   &kp SEMI   &kp COLON  &kp UNDER
-&kp SLASH  &kp BSLH   &kp LBRC       &kp RBRC       &macro_parens                      &kp PLUS   &kp MINUS &kp LT     &kp GT     &kp PIPE
-&trans     &trans     &trans         &trans         &trans           &trans    &trans  &trans               &trans     &trans     &trans
+&kp EXCL   &kp AT     &kp HASH  &kp DLLR  &kp PRCNT                          &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR
+&kp GRAVE  &kp TILDE  &kp LBKT  &kp RBKT  &macro_brackets                    &kp SQT    &kp DQT    &kp SEMI   &kp COLON  &kp UNDER
+&kp SLASH  &kp BSLH   &kp LBRC  &kp RBRC  &macro_parens                      &kp PLUS   &kp MINUS  &kp LT     &kp GT     &kp PIPE
+&trans     &trans     &trans    &trans    &trans           &trans    &trans  &trans                &trans     &trans     &trans
             >;
 
             sensor-bindings = <&re_kp C_BRI_DN C_BRI_UP>;
