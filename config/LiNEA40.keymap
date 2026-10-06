@@ -343,7 +343,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "ST";
             #binding-cells = <2>;
-            tapping-term-ms = <195>;
+            tapping-term-ms = <180>;
             quick-tap-ms = <195>;
             require-prior-idle-ms = <100>;
             flavor = "tap-preferred";
@@ -402,8 +402,8 @@
         default_layer {
             bindings = <
 &kp Q         &kp W        &kp E      &kp R               &kp T                                            &kp Y               &kp U  &kp I      &kp O      &kp P
-&st LALT A    &kp S        &kp D      &kp F               &kp G                                            &kp H               &kp J  &kp K      &kp L      &kp RET
-&st LSHIFT Z  &st LCTRL X  &kp C      &kp V               &kp B                                            &kp N               &kp M  &kp COMMA  &kp DOT    &st RSHIFT TAB
+&kp A         &kp S        &kp D      &kp F               &kp G                                            &kp H               &kp J  &kp K      &kp L      &kp RET
+&st LSHIFT Z  &st LCTRL X  &st LALT C &kp V               &kp B                                            &kp N               &kp M  &kp COMMA  &kp DOT    &st RSHIFT TAB
 &kp LALT      &kp LALT     &kp LCTRL  &lt_k SYMBOL MINUS  &hm LGUI LANG2  &stl FUNCTION SPACE    &kp BSPC  &lt_k NUMBER LANG1         &kp MINUS  &kp EQUAL  &hm RSHIFT ESC
             >;
 
