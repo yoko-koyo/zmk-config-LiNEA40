@@ -158,17 +158,6 @@
         };
     };
 
-    // NUMBER(2) と FUNCTION(4) を同時に有効にすると SYMBOL(3) になる
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        tri_layer {
-            if-layers = <NUMBER FUNCTION>;
-            then-layer = <SYMBOL>;
-        };
-    };
-
     combos {
         compatible = "zmk,combos";
 
@@ -413,10 +402,10 @@
 
         default_layer {
             bindings = <
-&kp Q         &kp W     &kp E      &kp R          &kp T                                     &kp Y              &kp U  &kp I             &kp O               &kp P
-&kp A         &kp S     &kp D      &kp F          &kp G                                     &kp H              &kp J  &kp K             &kp L               &kp RET
-&st LSHIFT Z  &kp X     &kp C      &kp V          &kp B                                     &kp N              &kp M  &kp COMMA         &kp DOT             &st RSHIFT TAB
-&kp LALT      &kp LALT  &kp LCTRL  &lt_k 3 LANG1  &hm LGUI LANG2  &stl 4 SPACE    &kp BSPC  &lt_k NUMBER LANG1        &kp MINUS         &kp EQUAL           &hm RSHIFT ESC
+&kp Q         &kp W        &kp E      &kp R               &kp T                                          &kp Y               &kp U  &kp I      &kp O      &kp P
+&st LALT A    &kp S        &kp D      &kp F               &kp G                                          &kp H               &kp J  &kp K      &kp L      &kp RET
+&st LSHIFT Z  &st LCTRL X  &kp C      &kp V               &kp B                                          &kp N               &kp M  &kp COMMA  &kp DOT    &st RSHIFT TAB
+&kp LALT      &kp LALT     &kp LCTRL  &lt_k SYMBOL MINUS  &hm LGUI LANG2  &stl FUNCTION SPACE  &kp BSPC  &lt_k NUMBER LANG1         &kp MINUS  &kp EQUAL  &hm RSHIFT ESC
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
@@ -438,8 +427,8 @@
         NUMBER {
             bindings = <
 &kp N1     &kp N2    &kp N3    &kp N4    &kp N5                           &kp N6    &kp N7    &kp N8  &kp N9     &kp N0
-&kp SLASH  &kp BSLH  &kp LBKT  &kp RBKT  &macro_braces                    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
-&kp QMARK  &kp PIPE  &kp LPAR  &kp RPAR  &macro_parens                    &kp ESC   &kp TAB   &trans  &trans     &trans
+&trans     &trans    &kp EQUAL &kp MINUS  &macro_braces                    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
+&trans     &trans    &kp PLUS  &kp UNDER   &macro_parens                    &kp ESC   &kp TAB   &trans  &trans     &trans
 &trans     &trans    &trans    &trans    &trans         &trans    &trans  &trans              &trans  &trans     &trans
             >;
 
