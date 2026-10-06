@@ -16,3 +16,10 @@ zmk/
 zmk-pmw3610-driver/
 
 build_local.sh
+zmk-pmw3610-driver */
+zmk-input-processor-scroll-inertia/
+zmk-input-processor-scroll-inertia */
+zmk-pointing-acceleration/
+
+# macOS
+.DS_Store
