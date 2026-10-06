@@ -401,10 +401,10 @@
 
         default_layer {
             bindings = <
-&kp Q          &kp W        &kp E      &kp R               &kp T                                            &kp Y               &kp U  &kp I      &kp O      &kp P
-&kp A          &kp S        &kp D      &kp F               &kp G                                            &kp H               &kp J  &kp K      &kp L      &kp RET
-&st LSHIFT Z   &st LCTRL X  &st LALT C &kp V               &kp B                                            &kp N               &kp M  &kp COMMA  &kp DOT    &st RSHIFT TAB
-&mo FUNCTION   &kp LCTRL    &kp LALT   &lt_k SYMBOL MINUS  &hm LGUI LANG2  &stl FUNCTION SPACE    &kp BSPC  &lt_k NUMBER LANG1         &kp MINUS  &kp EQUAL  &hm RSHIFT ESC
+&kp Q         &kp W        &kp E       &kp R               &kp T                                            &kp Y               &kp U  &kp I      &kp O      &kp P
+&kp A         &kp S        &kp D       &kp F               &kp G                                            &kp H               &kp J  &kp K      &kp L      &kp RET
+&st LSHIFT Z  &st LCTRL X  &st LALT C  &kp V               &kp B                                            &kp N               &kp M  &kp COMMA  &kp DOT    &st RSHIFT TAB
+&mo FUNCTION  &kp LCTRL    &kp LALT    &lt_k SYMBOL MINUS  &hm LGUI LANG2  &stl FUNCTION SPACE    &kp BSPC  &lt_k NUMBER LANG1         &kp MINUS  &kp EQUAL  &hm RSHIFT ESC
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
@@ -440,7 +440,7 @@
             bindings = <
 &kp EXCL   &kp AT     &kp HASH  &kp DLLR  &kp PRCNT                          &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR
 &kp GRAVE  &kp TILDE  &kp LBKT  &kp RBKT  &macro_brackets                    &kp SQT    &kp DQT    &kp SEMI   &kp COLON  &kp UNDER
-&kp SLASH  &kp BSLH   &kp LBRC  &kp RBRC  &macro_parens                      &kp PLUS   &kp MINUS  &kp LT     &kp GT     &kp PIPE
+&kp SLASH  &kp BSLH   &kp LBRC  &kp RBRC  &macro_parens                      &kp PLUS   &kp QMARK  &kp LT     &kp GT     &kp PIPE
 &trans     &trans     &trans    &trans    &trans           &trans    &trans  &trans                &trans     &trans     &trans
             >;
 
