@@ -495,14 +495,14 @@
             sensor-bindings = <&re_kp C_VOL_DN C_VOL_UP>;
         };
 
-        //3 NUMBERのOption(Alt)付き矢印
+        //3 記号
 
         SYMBOL {
             bindings = <
-&kp EXCL      &kp AT         &kp HASH       &kp DLLR       &kp PRCNT                          &kp CARET     &kp AMPS      &kp ASTRK   &kp LPAR       &kp RPAR
-&kp C_BRI_DN  &kp C_BRI_INC  &macro_parens  &macro_braces  &macro_brackets                    &kp LC(LEFT)  &kp LC(DOWN)  &kp LC(UP)  &kp LC(RIGHT)  &trans
-&kp C_VOL_DN  &kp C_VOL_UP   &trans         &trans         &trans                             &trans        &trans        &trans      &trans         &trans
-&trans        &trans         &trans         &trans         &trans           &trans    &trans  &trans                      &trans      &trans         &trans
+&kp EXCL   &kp AT     &kp HASH       &kp DLLR       &kp PRCNT                          &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR   &kp RPAR
+&kp GRAVE  &kp TILDE  &kp LBKT       &kp RBKT       &macro_brackets                    &kp SQT    &kp DQT   &kp SEMI   &kp COLON  &kp UNDER
+&kp SLASH  &kp BSLH   &kp LBRC       &kp RBRC       &macro_parens                      &kp PLUS   &kp MINUS &kp LT     &kp GT     &kp PIPE
+&trans     &trans     &trans         &trans         &trans           &trans    &trans  &trans               &trans     &trans     &trans
             >;
 
             sensor-bindings = <&re_kp C_BRI_DN C_BRI_UP>;
