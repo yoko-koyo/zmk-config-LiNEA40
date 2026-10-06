@@ -120,7 +120,7 @@
             bindings = <&kp LBRC &kp RBRC &kp LEFT>;
         };
 
-        /* <>を入力してカーソルを中に戻す */
+        /* <>を入力する */
 
         macro_angles: macro_angles {
             compatible = "zmk,behavior-macro";
@@ -130,7 +130,7 @@
             bindings = <&kp LT &kp GT>;
         };
 
-        /* ''を入力してカーソルを中に戻す */
+        /* ''を入力する */
 
         macro_squotes: macro_squotes {
             compatible = "zmk,behavior-macro";
@@ -140,7 +140,7 @@
             bindings = <&kp SQT &kp SQT>;
         };
 
-        /* ""を入力してカーソルを中に戻す */
+        /* ""を入力する */
 
         macro_dquotes: macro_dquotes {
             compatible = "zmk,behavior-macro";
