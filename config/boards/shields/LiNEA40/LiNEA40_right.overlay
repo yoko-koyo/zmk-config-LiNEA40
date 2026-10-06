@@ -1,4 +1,6 @@
 #include "LiNEA40.dtsi"
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <behaviors/input_gestures_accel.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -12,6 +14,20 @@
         , <&xiao_d 7 GPIO_ACTIVE_HIGH>  //col3-D7
         , <&gpio0 10 GPIO_ACTIVE_HIGH>  //col4-NFC2
         ;
+};
+
+/* トラックボールのポインタ加速。カーソルを速く動かすほど移動量が
+   大きくなる。値は千分率(1000=等倍)。cpi=400 前提の counts/sec。 */
+
+&pointer_accel {
+    input-type = <INPUT_EV_REL>;
+    track-remainders;            // 端数を蓄積して精度低下を防ぐ
+
+    min-factor = <1100>;         // ゆっくり動かした時は等倍(1.0x)
+    max-factor = <4000>;         // 速く動かした時は最大4倍まで加速
+    speed-threshold = <1300>;    // これ未満の速度では等倍(1.0x)
+    speed-max = <1700>;          // これ以上の速度で最大倍率に到達
+    acceleration-exponent = <3>; // 1=線形 / 2=二次関数的 / 3=三次関数的カーブ
 };
 
 / {
@@ -34,7 +50,7 @@
 
         /* ここで定義した zip_temp_layer を呼び出す */
         /* 第1引数: マウスレイヤー番号(1)、第2引数: 解除までの時間(ms) */
-        input-processors = <&zip_temp_layer 1 20000>;
+        input-processors = <&pointer_accel>, <&zip_temp_layer 1 20000>;
     };
 };
 
