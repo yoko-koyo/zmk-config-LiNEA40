@@ -127,7 +127,7 @@
             #binding-cells = <0>;
             wait-ms = <10>;
             tap-ms = <10>;
-            bindings = <&kp LT &kp GT &kp LEFT>;
+            bindings = <&kp LT &kp GT>;
         };
 
         /* ''を入力してカーソルを中に戻す */
@@ -137,7 +137,7 @@
             #binding-cells = <0>;
             wait-ms = <10>;
             tap-ms = <10>;
-            bindings = <&kp SQT &kp SQT &kp LEFT>;
+            bindings = <&kp SQT &kp SQT>;
         };
 
         /* ""を入力してカーソルを中に戻す */
@@ -147,7 +147,7 @@
             #binding-cells = <0>;
             wait-ms = <10>;
             tap-ms = <10>;
-            bindings = <&kp DQT &kp DQT &kp LEFT>;
+            bindings = <&kp DQT &kp DQT>;
         };
 
         macro_if: if {
@@ -404,7 +404,7 @@
 &kp Q          &kp W        &kp E      &kp R               &kp T                                            &kp Y               &kp U  &kp I      &kp O      &kp P
 &kp A          &kp S        &kp D      &kp F               &kp G                                            &kp H               &kp J  &kp K      &kp L      &kp RET
 &st LSHIFT Z   &st LCTRL X  &st LALT C &kp V               &kp B                                            &kp N               &kp M  &kp COMMA  &kp DOT    &st RSHIFT TAB
-&mo FUNCTION   &kp LALT     &kp LCTRL  &lt_k SYMBOL MINUS  &hm LGUI LANG2  &stl FUNCTION SPACE    &kp BSPC  &lt_k NUMBER LANG1         &kp MINUS  &kp EQUAL  &hm RSHIFT ESC
+&mo FUNCTION   &kp LCTRL    &kp LALT   &lt_k SYMBOL MINUS  &hm LGUI LANG2  &stl FUNCTION SPACE    &kp BSPC  &lt_k NUMBER LANG1         &kp MINUS  &kp EQUAL  &hm RSHIFT ESC
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
