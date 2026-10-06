@@ -158,6 +158,17 @@
         };
     };
 
+    // NUMBER(2) と FUNCTION(4) を同時に有効にすると SYMBOL(3) になる
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        tri_layer {
+            if-layers = <NUMBER FUNCTION>;
+            then-layer = <SYMBOL>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -402,10 +413,10 @@
 
         default_layer {
             bindings = <
-&kp Q         &kp W     &kp E      &kp R          &kp T                                   &kp Y              &kp U  &kp I             &kp O               &kp P
-&kp A         &kp S     &kp D      &kp F          &kp G                                   &kp H              &kp J  &kp K             &kp L               &kp MINUS
-&st LSHIFT Z  &kp X     &kp C      &kp V          &kp B                                   &kp N              &kp M  &kp COMMA         &kp DOT             &st RSHIFT EQUAL
-&kp LALT      &kp LALT  &kp LCTRL  &lt_k 3 LANG1  &hm LGUI LANG2  &stl 4 SPACE    &kp BSPC  &lt_k NUMBER RET         &kp LA(LS(LEFT))  &kp LA(LS(RIGHT))  &hm RSHIFT BSPC
+&kp Q         &kp W     &kp E      &kp R          &kp T                                     &kp Y              &kp U  &kp I             &kp O               &kp P
+&kp A         &kp S     &kp D      &kp F          &kp G                                     &kp H              &kp J  &kp K             &kp L               &kp RET
+&st LSHIFT Z  &kp X     &kp C      &kp V          &kp B                                     &kp N              &kp M  &kp COMMA         &kp DOT             &st RSHIFT TAB
+&kp LALT      &kp LALT  &kp LCTRL  &lt_k 3 LANG1  &hm LGUI LANG2  &stl 4 SPACE    &kp BSPC  &lt_k NUMBER LANG1        &kp MINUS         &kp EQUAL           &hm RSHIFT ESC
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
