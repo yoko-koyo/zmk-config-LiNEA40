@@ -212,14 +212,9 @@
             key-positions = <5 6>;
         };
 
-        bs {
-            bindings = <&kp LANG1>;
-            key-positions = <10 19>;
-        };
-
-        l2 {
-            bindings = <&kp LANG2>;
-            key-positions = <11 18>;
+        scroll {
+            bindings = <&mo 5>;
+            key-positions = <12 13>;
         };
     };
 
@@ -325,7 +320,9 @@
             label = "HM";
             #binding-cells = <2>;
             tapping-term-ms = <195>;
+
             // quick-tap-ms = <190>;
+
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -338,7 +335,9 @@
             #binding-cells = <2>;
             tapping-term-ms = <195>;
             flavor = "hold-preferred";
+
             // quick-tap-ms = <10>;
+
             bindings = <&mo>, <&kp>;
         };
 
