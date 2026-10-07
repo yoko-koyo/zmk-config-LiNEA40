@@ -324,8 +324,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HM";
             #binding-cells = <2>;
-            tapping-term-ms = <160>;
-            quick-tap-ms = <190>;
+            tapping-term-ms = <195>;
+            // quick-tap-ms = <190>;
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -336,9 +336,9 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LT_K";
             #binding-cells = <2>;
-            tapping-term-ms = <160>;
+            tapping-term-ms = <195>;
             flavor = "hold-preferred";
-            quick-tap-ms = <10>;
+            // quick-tap-ms = <10>;
             bindings = <&mo>, <&kp>;
         };
 
