@@ -459,7 +459,7 @@
             bindings = <
 &kp EXCL   &kp AT     &kp HASH  &kp DLLR  &kp PRCNT                          &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR
 &kp GRAVE  &kp TILDE  &kp LBKT  &kp RBKT  &macro_brackets                    &kp SQT    &kp DQT    &kp SEMI   &kp COLON  &kp UNDER
-&kp SLASH  &kp BSLH   &kp LBRC  &kp RBRC  &macro_parens                      &kp PLUS   &kp QMARK  &kp LT     &kp GT     &kp PIPE
+&kp BSLH   &kp PIPE   &kp LBRC  &kp RBRC  &macro_parens                      &kp PLUS   &kp QMARK  &kp LT     &kp GT     &kp SLASH
 &trans     &trans     &trans    &trans    &trans           &trans    &trans  &trans                &trans     &trans     &trans
             >;
 
