@@ -164,11 +164,16 @@
         /* ============================================================
            CATEGORY: MOUSE & SYSTEM (CamelCase)
            =========================================================== */
-        // Bluetoothレイヤー(6)呼び出し : 最下段3キー同時押し
+        // Bluetoothレイヤー(6)呼び出し : 右端縦3キー同時押し
 
         BluetoothLayer {
             bindings = <&mo WIRELESS>;
-            key-positions = <39 40 38>;
+            key-positions = <40 19 29>;
+        };
+
+        c_boot {
+            bindings = <&bootloader>;
+            key-positions = <16 17 18 19>;
         };
 
         combo_sqt {
@@ -188,7 +193,7 @@
 
         combo_grave {
             bindings = <&kp GRAVE>;
-            key-positions = <7 8>;
+            key-positions = <8 9>;
         };
 
         combo_m_if {
@@ -213,7 +218,7 @@
         };
 
         scroll {
-            bindings = <&mo 5>;
+            bindings = <&mo SCROLL>;
             key-positions = <12 13>;
         };
     };
@@ -365,8 +370,9 @@
             #binding-cells = <2>;
             tapping-term-ms = <180>;
             quick-tap-ms = <195>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <80>;
             flavor = "tap-preferred";
+            hold-trigger-on-release;
             bindings = <&kp>, <&kp>;
         };
 
@@ -421,10 +427,10 @@
 
         default_layer {
             bindings = <
-&kp Q         &kp W        &kp E       &kp R                  &kp T                                            &kp Y               &kp U  &kp I      &kp O          &kp P
-&kp A         &kp S        &kp D       &kp F                  &kp G                                            &kp H               &kp J  &kp K      &kp L          &kp RET
-&st LSHIFT Z  &st LCTRL X  &st LALT C  &kp V                  &kp B                                            &kp N               &kp M  &kp COMMA  &st RCTRL DOT  &st RSHIFT TAB
-&mo FUNCTION  &kp LCTRL    &kp LALT    &lt_k SYMBOL LG(SEMI)  &hm LGUI LANG2  &stl FUNCTION SPACE    &kp BSPC  &lt_k NUMBER LANG1         &kp MINUS  &kp EQUAL      &hm RSHIFT ESC
+&st LALT Q    &kp W        &kp E       &kp R                  &kp T                                            &kp Y               &kp U  &kp I      &kp O          &kp P
+&st LCTRL A   &kp S        &kp D       &kp F                  &kp G                                            &kp H               &kp J  &kp K      &kp L          &kp MINUS
+&st LSHIFT Z  &kp X        &kp C       &kp V                  &kp B                                            &kp N               &kp M  &kp COMMA  &st RCTRL DOT  &st RSHIFT PLUS
+&mo FUNCTION  &kp LCTRL    &kp LALT    &lt_k SYMBOL LANG1     &hm LGUI LANG2  &stl FUNCTION SPACE    &kp BSPC  &lt_k NUMBER RET           &kp MINUS  &kp EQUAL      &hm RSHIFT ESC
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
@@ -447,7 +453,7 @@
             bindings = <
 &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                           &kp N6     &kp N7     &kp N8  &kp N9     &kp N0
 &trans  &trans  &kp LBKT  &kp RBKT  &macro_braces                    &kp LEFT   &kp DOWN   &kp UP  &kp RIGHT  &trans
-&trans  &trans  &trans    &trans    &macro_parens                    &kp EQUAL  &kp MINUS  &trans  &trans     &trans
+&trans  &trans  &trans    &trans    &macro_parens                    &kp ESC    &kp TAB  &trans  &trans     &trans
 &trans  &trans  &trans    &trans    &trans         &trans    &trans  &trans                &trans  &trans     &trans
             >;
             sensor-bindings = <&re_kp C_VOL_DN C_VOL_UP>;
