@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: oleksandrmaslov  # <-- Pointer acceleration
       url-base: https://github.com/oleksandrmaslov
+    - name: kot149
+      url-base: https://github.com/kot149
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -24,5 +26,8 @@ manifest:
     - name: zmk-pointing-acceleration
       remote: oleksandrmaslov
       revision: main
+    - name: zmk-mouse-gesture
+      remote: kot149
+      revision: v1
   self:
     path: config

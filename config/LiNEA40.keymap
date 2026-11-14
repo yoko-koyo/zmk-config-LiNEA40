@@ -7,6 +7,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <mouse-gesture.dtsi>
 
 // レイヤー定義
 
@@ -64,7 +65,45 @@
     // };
 };
 
+// マウスジェスチャー（SYMBOL レイヤー中 = &lt_k SYMBOL LANG1 長押し中にボールで描く）
+&zip_mouse_gesture {
+    stroke-size = <300>;
+    enable-eager-mode;
+    always-active;       // SYMBOL レイヤーの間だけこの processor が呼ばれるので常時有効でよい
+    suppress-movement;   // ジェスチャー中はカーソルを動かさない
+
+    back {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&kp LG(LBKT)>;      // 戻る
+    };
+    forward {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp LG(RBKT)>;      // 進む
+    };
+    mission_control {
+        pattern = <GESTURE_UP>;
+        bindings = <&kp LC(UP)>;
+    };
+    app_expose {
+        pattern = <GESTURE_DOWN>;
+        bindings = <&kp LC(DOWN)>;
+    };
+    close_tab {
+        pattern = <GESTURE_DOWN GESTURE_RIGHT>;
+        bindings = <&kp LG(W)>;
+    };
+    reopen_tab {
+        pattern = <GESTURE_DOWN GESTURE_LEFT>;
+        bindings = <&kp LG(LS(T))>;
+    };
+};
+
 &trackball_listener {
+    gesture {
+        layers = <SYMBOL>;
+        input-processors = <&zip_mouse_gesture>;
+    };
+
     scroller {
         layers = <FUNCTION SCROLL>;
         input-processors = <
@@ -378,6 +417,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <195>;
             flavor = "hold-preferred";
+            hold-while-undecided;   // 押した瞬間にレイヤーを有効にし、ジェスチャーをすぐ始められるようにする
 
             // quick-tap-ms = <10>;
 
