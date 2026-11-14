@@ -92,7 +92,7 @@
         
         /* ドライバ標準の自動レイヤーは 0(無効) にして zip_temp_layer に任せる */
         automouse-layer = <0>; 
-        snipe-layers = <4>;
-        scroll-layers = <5>;
+        // snipe-layers = <4>;  FUNCTION はスクロールに変更
+        scroll-layers = <4 5>;
     };
 };

@@ -66,7 +66,7 @@
 
 &trackball_listener {
     scroller {
-        layers = <SCROLL>;
+        layers = <FUNCTION SCROLL>;
         input-processors = <
             &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
             &zip_xy_to_scroll_mapper
@@ -318,6 +318,29 @@
             bindings = <&kp>, <&td_enjp>;
         };
 
+        // 英数/かな Tap-Dance (1回タップ: 英数 / 2回タップ: かな)。cmd_eisu のタップ側から使う
+
+        td_eisu_kana: td_eisu_kana {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_EISU_KANA";
+            #binding-cells = <0>;
+            // 1回目を押した瞬間から数える。200 だと2回目が間に合わず英数になりやすいので延長
+            tapping-term-ms = <300>;
+            bindings = <&kp LANG2>, <&kp LANG1>;
+        };
+
+        // Cmd/英数キー用 Hold-Tap (Hold: Cmd, Tap: td_eisu_kana)。使い方: &cmd_eisu LGUI 0
+
+        cmd_eisu: cmd_eisu {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CMD_EISU";
+            #binding-cells = <2>;
+            tapping-term-ms = <160>;
+            quick-tap-ms = <300>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&td_eisu_kana>;
+        };
+
         // 一般的なHold-Tap (Hold: Modifier, Tap: Key)
 
         hm: hm {
@@ -370,8 +393,7 @@
             tapping-term-ms = <180>;
             quick-tap-ms = <195>;
             require-prior-idle-ms = <80>;
-            flavor = "tap-preferred";
-            hold-trigger-on-release;
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
 
@@ -406,6 +428,9 @@
             quick-tap-ms = <190>;
             require-prior-idle-ms = <110>;
             flavor = "tap-preferred";
+            // 押した瞬間から FUNCTION を有効にし、ボールを動かすとすぐスクロールになるようにする。
+            // タップと判定されたら FUNCTION を解除してから SPACE を送る。押下中の他キーは判定後に処理される
+            hold-while-undecided;
             bindings = <&mo>, <&kp>;
         };
 
@@ -429,7 +454,7 @@
 &kp Q         &kp W        &kp E       &kp R               &kp T                                            &kp Y             &kp U  &kp I      &kp O          &kp P
 &kp A         &kp S        &kp D       &kp F               &kp G                                            &kp H             &kp J  &kp K      &kp L          &kp MINUS
 &st LSHIFT Z  &st LCTRL X  &st LALT C  &kp V               &kp B                                            &kp N             &kp M  &kp COMMA  &st RCTRL DOT  &st RSHIFT PLUS
-&mo FUNCTION  &kp LCTRL    &kp LALT    &lt_k SYMBOL LANG1  &hm LGUI LANG2  &stl FUNCTION SPACE    &kp BSPC  &lt_k NUMBER RET         &kp MINUS  &kp EQUAL      &hm RSHIFT ESC
+&mo FUNCTION  &kp LCTRL    &kp LALT    &lt_k SYMBOL LANG1  &cmd_eisu LGUI 0  &stl FUNCTION SPACE    &kp BSPC  &lt_k NUMBER RET         &kp MINUS  &kp EQUAL      &hm RSHIFT ESC
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
