@@ -73,11 +73,11 @@
     suppress-movement;   // ジェスチャー中はカーソルを動かさない
 
     back {
-        pattern = <GESTURE_LEFT>;
+        pattern = <GESTURE_UP GESTURE_LEFT>;
         bindings = <&kp LG(LBKT)>;      // 戻る
     };
     forward {
-        pattern = <GESTURE_RIGHT>;
+        pattern = <GESTURE_UP GESTURE_RIGHT>;
         bindings = <&kp LG(RBKT)>;      // 進む
     };
     mission_control {
@@ -88,13 +88,66 @@
         pattern = <GESTURE_DOWN>;
         bindings = <&kp LC(DOWN)>;
     };
-    close_tab {
-        pattern = <GESTURE_DOWN GESTURE_RIGHT>;
-        bindings = <&kp LG(W)>;
+    desktop_left {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&kp LC(LEFT)>;      // 左のデスクトップへ
     };
-    reopen_tab {
+    desktop_right {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp LC(RIGHT)>;     // 右のデスクトップへ
+    };
+    next_tab {
+        pattern = <GESTURE_DOWN GESTURE_RIGHT>;
+        bindings = <&kp LC(TAB)>;       // 次のタブ
+    };
+    prev_tab {
         pattern = <GESTURE_DOWN GESTURE_LEFT>;
-        bindings = <&kp LG(LS(T))>;
+        bindings = <&kp LC(LS(TAB))>;   // 前のタブ
+    };
+};
+
+// GUI（&cmd_eisu 長押し）中のジェスチャー。カーソルは止めない。内容は SYMBOL 版と同じ
+/ {
+    input_processors {
+        zip_gui_gesture: zip_gui_gesture {
+            compatible = "zmk,input-processor-mouse-gesture";
+            #input-processor-cells = <0>;
+            stroke-size = <300>;
+            enable-eager-mode;
+
+            back {
+                pattern = <GESTURE_UP GESTURE_LEFT>;
+                bindings = <&ungui LG(LBKT)>;
+            };
+            forward {
+                pattern = <GESTURE_UP GESTURE_RIGHT>;
+                bindings = <&ungui LG(RBKT)>;
+            };
+            mission_control {
+                pattern = <GESTURE_UP>;
+                bindings = <&ungui LC(UP)>;
+            };
+            app_expose {
+                pattern = <GESTURE_DOWN>;
+                bindings = <&ungui LC(DOWN)>;
+            };
+            desktop_left {
+                pattern = <GESTURE_LEFT>;
+                bindings = <&ungui LC(LEFT)>;
+            };
+            desktop_right {
+                pattern = <GESTURE_RIGHT>;
+                bindings = <&ungui LC(RIGHT)>;
+            };
+            next_tab {
+                pattern = <GESTURE_DOWN GESTURE_RIGHT>;
+                bindings = <&ungui LC(TAB)>;
+            };
+            prev_tab {
+                pattern = <GESTURE_DOWN GESTURE_LEFT>;
+                bindings = <&ungui LC(LS(TAB))>;
+            };
+        };
     };
 };
 
@@ -127,6 +180,32 @@
                 <&kp SPACE>,
                 <&macro_release>,
                 <&kp LCTRL>;
+        };
+
+        /* Cmd + マウスジェスチャー有効化（cmd_eisu の長押し側から使う） */
+
+        gui_gesture: gui_gesture {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings =
+                <&macro_press &kp LGUI &mouse_gesture>,
+                <&macro_pause_for_release>,
+                <&macro_release &mouse_gesture &kp LGUI>;
+        };
+
+        /* Cmd を離してからキーを送る（GUI ジェスチャー用）。Cmd は押し直さないので、続けて Cmd を使うときは押し直す */
+
+        ungui: ungui {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            wait-ms = <0>;
+            tap-ms = <10>;
+            bindings =
+                <&macro_release &kp LGUI>,
+                <&macro_param_1to1>,
+                <&macro_tap &kp MACRO_PLACEHOLDER>;
         };
 
         /* ()を入力してカーソルを中に戻す */
@@ -377,7 +456,7 @@
             tapping-term-ms = <160>;
             quick-tap-ms = <300>;
             flavor = "hold-preferred";
-            bindings = <&kp>, <&td_eisu_kana>;
+            bindings = <&gui_gesture>, <&td_eisu_kana>;   // 長押し: Cmd + ジェスチャー
         };
 
         // 一般的なHold-Tap (Hold: Modifier, Tap: Key)
