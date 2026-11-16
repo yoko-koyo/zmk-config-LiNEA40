@@ -104,11 +104,11 @@
             suppress-movement;
 
             prev_tab {
-                pattern = <GESTURE_LEFT>;
+                pattern = <GESTURE_RIGHT>;
                 bindings = <&kp LG(LA(LEFT))>;  // 前のタブ（Cmd+Option+←）
             };
             next_tab {
-                pattern = <GESTURE_RIGHT>;
+                pattern = <GESTURE_LEFT>;
                 bindings = <&kp LG(LA(RIGHT))>; // 次のタブ（Cmd+Option+→）
             };
             first_tab {
@@ -540,7 +540,7 @@
             bindings = <
 &kp Q         &kp W        &kp E       &kp R               &kp T                                            &kp Y             &kp U  &kp I      &kp O          &kp P
 &kp A         &kp S        &kp D       &kp F               &kp G                                            &kp H             &kp J  &kp K      &kp L          &kp MINUS
-&st LSHIFT Z  &st LCTRL X  &st LALT C  &kp V               &kp B                                            &kp N             &kp M  &kp COMMA  &st RCTRL DOT  &st RSHIFT PLUS
+&st_z LSHIFT Z  &st LCTRL X  &st LALT C  &kp V               &kp B                                            &kp N             &kp M  &kp COMMA  &st RCTRL DOT  &st RSHIFT PLUS
 &mo FUNCTION  &kp LCTRL    &kp LALT    &lt_k SYMBOL LANG1  &cmd_eisu LGUI 0  &stl FUNCTION SPACE    &kp BSPC  &lt_k NUMBER RET         &kp MINUS  &kp EQUAL      &hm RSHIFT ESC
             >;
 
