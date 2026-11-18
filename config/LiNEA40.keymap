@@ -3,11 +3,11 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <mouse-gesture.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <mouse-gesture.dtsi>
 
 // レイヤー定義
 
@@ -66,25 +66,28 @@
 };
 
 // マウスジェスチャー（SYMBOL レイヤー中 = &lt_k SYMBOL LANG1 長押し中にボールで描く）
+
 &zip_mouse_gesture {
     stroke-size = <100>;  // 1方向と判定する移動量。小さいほど少ない操作で反応
     gesture-cooldown-ms = <300>;   // 発動後、次のジェスチャーを受け付けない時間（既定 500）
     enable-eager-mode;
     always-active;       // SYMBOL レイヤーの間だけこの processor が呼ばれるので常時有効でよい
     suppress-movement;   // ジェスチャー中はカーソルを動かさない
-
     mission_control {
         pattern = <GESTURE_UP>;
         bindings = <&kp LC(UP)>;
     };
+
     app_expose {
         pattern = <GESTURE_DOWN>;
         bindings = <&kp LC(DOWN)>;
     };
+
     desktop_left {
         pattern = <GESTURE_LEFT>;
         bindings = <&kp LC(RIGHT)>;     // 右のデスクトップへ
     };
+
     desktop_right {
         pattern = <GESTURE_RIGHT>;
         bindings = <&kp LC(LEFT)>;      // 左のデスクトップへ
@@ -92,6 +95,7 @@
 };
 
 // タブ移動ジェスチャー（NUMBER レイヤー中 = &lt_k NUMBER RET 長押し中）
+
 / {
     input_processors {
         zip_tab_gesture: zip_tab_gesture {
@@ -107,14 +111,17 @@
                 pattern = <GESTURE_RIGHT>;
                 bindings = <&kp LG(LA(LEFT))>;  // 前のタブ（Cmd+Option+←）
             };
+
             next_tab {
                 pattern = <GESTURE_LEFT>;
                 bindings = <&kp LG(LA(RIGHT))>; // 次のタブ（Cmd+Option+→）
             };
+
             close_tab {
                 pattern = <GESTURE_DOWN>;
                 bindings = <&kp LG(W)>;         // タブを閉じる（Cmd+W）
             };
+
             reload_tab {
                 pattern = <GESTURE_UP>;
                 bindings = <&kp LG(R)>;         // 再読み込み（Cmd+R）
@@ -237,7 +244,7 @@
 
         BluetoothLayer {
             bindings = <&mo WIRELESS>;
-            key-positions = <40 19 29>;
+            key-positions = <40 38 39>;
         };
 
         c_boot {
@@ -393,7 +400,9 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_EISU_KANA";
             #binding-cells = <0>;
+
             // 1回目を押した瞬間から数える。200 だと2回目が間に合わず英数になりやすいので延長
+
             tapping-term-ms = <300>;
             bindings = <&kp LANG2>, <&kp LANG1>;
         };
@@ -448,7 +457,6 @@
             tapping-term-ms = <195>;
             flavor = "hold-preferred";
             hold-while-undecided;   // 押した瞬間にレイヤーを有効にし、ジェスチャーをすぐ始められるようにする
-
             // quick-tap-ms = <10>;
 
             bindings = <&mo>, <&kp>;
@@ -494,13 +502,17 @@
             compatible = "zmk,behavior-hold-tap";
             label = "STL";
             #binding-cells = <2>;
+
             // CLine46 の slt と同じ値
+
             tapping-term-ms = <170>;
             quick-tap-ms = <140>;
             require-prior-idle-ms = <140>;
             flavor = "balanced";
+
             // 押した瞬間から FUNCTION を有効にし、ボールを動かすとすぐスクロールになるようにする。
             // タップと判定されたら FUNCTION を解除してから SPACE を送る。押下中の他キーは判定後に処理される
+
             hold-while-undecided;
             bindings = <&mo>, <&kp>;
         };
@@ -522,9 +534,9 @@
 
         default_layer {
             bindings = <
-&kp Q         &kp W        &kp E       &kp R               &kp T                                            &kp Y             &kp U  &kp I      &kp O          &kp P
-&kp A         &kp S        &kp D       &kp F               &kp G                                            &kp H             &kp J  &kp K      &kp L          &kp MINUS
-&st LSHIFT Z    &st LCTRL X  &st LALT C  &kp V               &kp B                                            &kp N             &kp M  &kp COMMA  &st RCTRL DOT  &st RSHIFT PLUS
+&kp Q         &kp W        &kp E       &kp R               &kp T                                              &kp Y             &kp U  &kp I      &kp O          &kp P
+&kp A         &kp S        &kp D       &kp F               &kp G                                              &kp H             &kp J  &kp K      &kp L          &kp MINUS
+&st LSHIFT Z  &st LCTRL X  &st LALT C  &kp V               &kp B                                              &kp N             &kp M  &kp COMMA  &st RCTRL DOT  &st RSHIFT PLUS
 &mo FUNCTION  &kp LCTRL    &kp LALT    &lt_k SYMBOL LANG1  &cmd_eisu LGUI 0  &stl FUNCTION SPACE    &kp BSPC  &lt_k NUMBER RET         &kp MINUS  &kp EQUAL      &hm RSHIFT ESC
             >;
 
@@ -546,10 +558,10 @@
 
         NUMBER {
             bindings = <
-&kp N1   &kp N2     &kp N3    &kp N4    &kp N5                           &kp N6    &kp N7    &kp N8  &kp N9     &kp N0
-&kp EXCL &kp QMARK  &kp LBKT  &kp RBKT  &macro_braces                    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
-&trans   &trans     &trans    &trans    &macro_parens                    &kp ESC   &kp TAB   &trans  &trans     &trans
-&trans   &trans     &trans    &trans    &trans         &trans    &trans  &trans              &trans  &trans     &trans
+&kp N1    &kp N2     &kp N3    &kp N4    &kp N5                           &kp N6    &kp N7    &kp N8  &kp N9     &kp N0
+&kp EXCL  &kp QMARK  &kp LBKT  &kp RBKT  &macro_braces                    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
+&trans    &trans     &trans    &trans    &macro_parens                    &kp ESC   &kp TAB   &trans  &trans     &trans
+&trans    &trans     &trans    &trans    &trans         &trans    &trans  &trans              &trans  &trans     &trans
             >;
 
             sensor-bindings = <&re_kp C_VOL_DN C_VOL_UP>;
