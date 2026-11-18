@@ -311,6 +311,11 @@
             bindings = <&kp LANG1>;     // D+F 同時押しで かな
             key-positions = <12 13>;
         };
+
+        combo_eisu {
+            bindings = <&kp LANG2>;     // S+D 同時押しで 英数
+            key-positions = <11 12>;
+        };
     };
 
     behaviors {
