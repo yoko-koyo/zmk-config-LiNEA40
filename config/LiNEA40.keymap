@@ -414,7 +414,7 @@
             label = "CMD_EISU";
             #binding-cells = <2>;
             tapping-term-ms = <160>;
-            quick-tap-ms = <300>;
+            // quick-tap は外す（英数タップ直後の Cmd+C 等がタップ扱いになるため）
             flavor = "hold-preferred";
             bindings = <&kp>, <&td_eisu_kana>;
         };
@@ -468,10 +468,10 @@
             compatible = "zmk,behavior-hold-tap";
             label = "ST";
             #binding-cells = <2>;
-            tapping-term-ms = <170>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <195>;
             require-prior-idle-ms = <150>;
-            flavor = "tap-preferred";  // tapping-term-ms 押し続けたときだけ修飾キー
+            flavor = "balanced";  // 他キーを押して離すと即修飾キー（待ち不要）
             bindings = <&kp>, <&kp>;
         };
 
@@ -560,7 +560,7 @@
             bindings = <
 &kp N1    &kp N2     &kp N3    &kp N4    &kp N5                           &kp N6    &kp N7    &kp N8  &kp N9     &kp N0
 &kp EXCL  &kp QMARK  &kp LBKT  &kp RBKT  &macro_braces                    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
-&trans    &trans     &trans    &trans    &macro_parens                    &kp ESC   &kp TAB   &trans  &trans     &trans
+&kp LANG2 &kp LANG1  &trans    &trans    &macro_parens                    &kp ESC   &kp TAB   &trans  &trans     &trans
 &trans    &trans     &trans    &trans    &trans         &trans    &trans  &trans              &trans  &trans     &trans
             >;
 
