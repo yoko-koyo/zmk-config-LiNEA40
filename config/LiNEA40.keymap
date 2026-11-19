@@ -18,7 +18,6 @@
 #define SCROLL 5
 #define WIRELESS 6
 #define CMDTAP 7
-#define GESTURE 8
 
 // 書き込みコマンド
 // git pull | ./flash_l.sh 左用
@@ -53,48 +52,7 @@
     };
 };
 
-// タブ移動ジェスチャー（GESTURE レイヤー中 = cmd_eisu タップ→もう一度押し続けている間）
-
-/ {
-    input_processors {
-        zip_tab_gesture: zip_tab_gesture {
-            compatible = "zmk,input-processor-mouse-gesture";
-            #input-processor-cells = <0>;
-            stroke-size = <70>;            // 1回のタブ移動に必要なボールの量
-            gesture-cooldown-ms = <100>;   // 連続でタブ移動するときの間隔（短いほど速く次へ進む）
-            enable-eager-mode;
-            always-active;
-            suppress-movement;
-
-            prev_tab {
-                pattern = <GESTURE_RIGHT>;
-                bindings = <&kp LG(LA(LEFT))>;  // 前のタブ（Cmd+Option+←）
-            };
-
-            next_tab {
-                pattern = <GESTURE_LEFT>;
-                bindings = <&kp LG(LA(RIGHT))>; // 次のタブ（Cmd+Option+→）
-            };
-
-            close_tab {
-                pattern = <GESTURE_UP>;
-                bindings = <&kp LG(W)>;         // タブを閉じる（Cmd+W）
-            };
-
-            reload_tab {
-                pattern = <GESTURE_DOWN>;
-                bindings = <&kp LG(R)>;         // 再読み込み（Cmd+R）
-            };
-        };
-    };
-};
-
 &trackball_listener {
-    tab_gesture {
-        layers = <GESTURE>;
-        input-processors = <&zip_tab_gesture>;
-    };
-
     gesture {
         layers = <SYMBOL>;
         input-processors = <&zip_mouse_gesture>;
@@ -111,11 +69,11 @@
 
 / {
     macros {
-        // 英数を送って CMDTAP を 300ms 有効化
+        // 英数を送って CMDTAP を 300ms 有効化（cmd_eisu のタップ側から使う）
         macro_eisu_cmdtap: macro_eisu_cmdtap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;   // 既定の待ちを無くして CMDTAP をすぐ有効にする
+            wait-ms = <0>;
             tap-ms = <5>;
             bindings =
                 <&macro_tap>,
@@ -212,7 +170,7 @@
 
         combo_back_slash {
             bindings = <&kp BSLH>;
-            key-positions = <25 26>;
+            key-positions = <26 27>;   // M + ,
         };
 
         combo_at {
@@ -220,8 +178,8 @@
             key-positions = <5 6>;
         };
 
-        combo_number {
-            bindings = <&kp LANG1>;     // D+F 同時押しで かな
+        combo_ret {
+            bindings = <&kp RET>;       // D+F 同時押しで Enter
             key-positions = <12 13>;
         };
 
@@ -255,8 +213,9 @@
             bindings = <&mo>;
         };
 
-        // Cmd/英数キー用 Hold-Tap (Hold: Cmd, Tap: 英数 + CMDTAP を 300ms 有効化)
-        // タップ直後にもう一度押し続けると CMDTAP 上の &mo GESTURE になりタブジェスチャーが使える
+        // Cmd/英数キー用 Hold-Tap。使い方: &cmd_eisu LGUI 0
+        //   長押し: Cmd / タップ: 英数（＋CMDTAP を 300ms 有効化）
+        //   タップ直後にもう一度押し続ける: Shift、もう一度タップ: かな（CMDTAP 上の &hm LSHIFT LANG1）
 
         cmd_eisu: cmd_eisu {
             compatible = "zmk,behavior-hold-tap";
@@ -312,7 +271,7 @@
             bindings = <&mo>, <&kp>;
         };
 
-        // 修飾キー用 Hold-Tap（Z/X/C/DOT/PLUS）
+        // 修飾キー用 Hold-Tap（Z/X/C/DOT/EQUAL）
 
         st: st {
             compatible = "zmk,behavior-hold-tap";
@@ -351,12 +310,15 @@
     keymap {
         compatible = "zmk,keymap";
 
+        //0 デフォルト
+        // 右下2キー: 前のタブ / 次のタブ（Cmd+Option+← / →）
+
         default_layer {
             bindings = <
 &kp Q         &kp W        &kp E       &kp R               &kp T                                              &kp Y             &kp U  &kp I      &kp O          &kp P
 &kp A         &kp S        &kp D       &kp F               &kp G                                              &kp H             &kp J  &kp K      &kp L          &kp MINUS
-&st LSHIFT Z  &st LCTRL X  &st LALT C  &kp V               &kp B                                              &kp N             &kp M  &kp COMMA  &st RCTRL DOT  &st RSHIFT PLUS
-&mo FUNCTION  &kp LCTRL    &kp LALT    &lt_k SYMBOL LANG1  &cmd_eisu LGUI 0  &stl FUNCTION SPACE    &bs_sft RSHIFT BSPC  &lt_k NUMBER RET         &kp MINUS  &kp EQUAL      &hm RSHIFT ESC
+&st LSHIFT Z  &st LCTRL X  &st LALT C  &kp V               &kp B                                              &kp N             &kp M  &kp COMMA  &st RCTRL DOT  &st RSHIFT EQUAL
+&mo FUNCTION  &kp LCTRL    &kp LALT    &lt_k SYMBOL LANG1  &cmd_eisu LGUI 0  &stl FUNCTION SPACE    &bs_sft RSHIFT BSPC  &lt_k NUMBER RET         &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))  &hm RSHIFT ESC
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
@@ -374,11 +336,12 @@
         };
 
         //2 数字・基本記号・矢印キー
+        // 右親指（BSPC）の負担を減らすため、左手の D/F 位置に DEL / BSPC を置く
 
         NUMBER {
             bindings = <
 &kp N1    &kp N2     &kp N3    &kp N4    &kp N5                           &kp N6    &kp N7    &kp N8  &kp N9     &kp N0
-&kp EXCL  &kp QMARK  &kp LANG1 &kp LANG2 &macro_braces                    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
+&kp EXCL  &kp QMARK  &kp DEL   &kp BSPC  &macro_braces                    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
 &trans    &trans     &kp LBKT  &kp RBKT  &macro_parens                    &kp ESC   &kp TAB   &trans  &trans     &trans
 &trans    &trans     &trans    &trans    &trans         &trans    &trans  &trans              &trans  &trans     &trans
             >;
@@ -434,25 +397,14 @@
             >;
         };
 
-        //7 cmd_eisu タップ直後 300ms だけ有効。同じキーを押し続けると GESTURE（タブジェスチャー）
+        //7 cmd_eisu タップ直後 300ms だけ有効。同じキーを押し続けると Shift（タップならかな）
 
         CMDTAP {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &mo GESTURE  &trans    &trans  &trans          &trans  &trans  &trans
-            >;
-        };
-
-        //8 タブジェスチャー専用（キーはすべて透過。ボールの動きだけジェスチャーにする）
-
-        GESTURE {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                               &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                               &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                               &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &hm LSHIFT LANG1  &trans    &trans  &trans          &trans  &trans  &trans
             >;
         };
     };
