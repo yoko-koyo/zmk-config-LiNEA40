@@ -18,6 +18,7 @@
 #define SCROLL 5
 #define WIRELESS 6
 #define CMDTAP 7
+#define GESTURE 8
 
 // 書き込みコマンド
 // git pull | ./flash_l.sh 左用
@@ -52,7 +53,48 @@
     };
 };
 
+// タブ移動ジェスチャー（GESTURE レイヤー中 = J キー / MOUSE レイヤーの MB2 長押し中にボールで描く）
+
+/ {
+    input_processors {
+        zip_tab_gesture: zip_tab_gesture {
+            compatible = "zmk,input-processor-mouse-gesture";
+            #input-processor-cells = <0>;
+            stroke-size = <70>;            // 1回のタブ移動に必要なボールの量
+            gesture-cooldown-ms = <100>;   // 連続でタブ移動するときの間隔（短いほど速く次へ進む）
+            enable-eager-mode;
+            always-active;
+            suppress-movement;
+
+            prev_tab {
+                pattern = <GESTURE_RIGHT>;
+                bindings = <&kp LG(LA(LEFT))>;  // 前のタブ（Cmd+Option+←）
+            };
+
+            next_tab {
+                pattern = <GESTURE_LEFT>;
+                bindings = <&kp LG(LA(RIGHT))>; // 次のタブ（Cmd+Option+→）
+            };
+
+            close_tab {
+                pattern = <GESTURE_UP>;
+                bindings = <&kp LG(W)>;         // タブを閉じる（Cmd+W）
+            };
+
+            reload_tab {
+                pattern = <GESTURE_DOWN>;
+                bindings = <&kp LG(R)>;         // 再読み込み（Cmd+R）
+            };
+        };
+    };
+};
+
 &trackball_listener {
+    tab_gesture {
+        layers = <GESTURE>;
+        input-processors = <&zip_tab_gesture>;
+    };
+
     gesture {
         layers = <SYMBOL>;
         input-processors = <&zip_mouse_gesture>;
@@ -305,6 +347,35 @@
             hold-while-undecided;
             bindings = <&mo>, <&kp>;
         };
+
+        // 文字キー用 Layer-Tap（L: SCROLL / J: GESTURE）
+        // 押した瞬間からレイヤーを有効にし、長押し中にボールを動かすとスクロール・タブジェスチャーになる
+        // tap-preferred + require-prior-idle でタイピング中は文字のまま
+
+        l_scrl: l_scrl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "L_SCRL";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <150>;
+            flavor = "tap-preferred";
+            hold-while-undecided;
+            bindings = <&mo>, <&kp>;
+        };
+
+        // マウスボタン用 Layer-Tap（MOUSE レイヤーの MB2: 長押しで GESTURE）
+        // 押した瞬間から GESTURE を有効にし、長押し中にボールを動かすとタブジェスチャーになる
+
+        mb_lt: mb_lt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MB_LT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            hold-while-undecided;
+            bindings = <&mo>, <&mkp>;
+        };
     };
 
     keymap {
@@ -316,7 +387,7 @@
         default_layer {
             bindings = <
 &kp Q         &kp W        &kp E       &kp R               &kp T                                              &kp Y             &kp U  &kp I      &kp O          &kp P
-&kp A         &kp S        &kp D       &kp F               &kp G                                              &kp H             &kp J  &kp K      &kp L          &kp MINUS
+&kp A         &kp S        &kp D       &kp F               &kp G                                              &kp H             &l_scrl GESTURE J  &kp K      &l_scrl SCROLL L  &kp MINUS
 &st LSHIFT Z  &st LCTRL X  &st LALT C  &kp V               &kp B                                              &kp N             &kp M  &kp COMMA  &st RCTRL DOT  &st RSHIFT EQUAL
 &mo FUNCTION  &kp LCTRL    &kp LALT    &lt_k SYMBOL LANG1  &cmd_eisu LGUI 0  &stl FUNCTION SPACE    &bs_sft RSHIFT BSPC  &lt_k NUMBER RET         &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))  &hm RSHIFT ESC
             >;
@@ -329,7 +400,7 @@
         MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans      &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &mkp MB2  &mkp MB1  &mo SCROLL  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &mb_lt GESTURE MB2  &mkp MB1  &trans      &trans
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans      &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans            &trans    &trans      &trans
             >;
@@ -405,6 +476,17 @@
 &trans  &trans  &trans  &trans  &trans                               &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                               &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &hm LSHIFT LANG1  &trans    &trans  &trans          &trans  &trans  &trans
+            >;
+        };
+
+        //8 J / MB2 長押し中のタブ移動ジェスチャー用（キーは全て透過）
+
+        GESTURE {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &trans  &trans  &trans
             >;
         };
     };
