@@ -20,6 +20,7 @@ zmk-pmw3610-driver */
 zmk-input-processor-scroll-inertia/
 zmk-input-processor-scroll-inertia */
 zmk-pointing-acceleration/
+zmk-mouse-gesture/
 
 # macOS
 .DS_Store
