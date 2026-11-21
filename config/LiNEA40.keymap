@@ -76,14 +76,24 @@
                 bindings = <&kp LG(LA(RIGHT))>; // 次のタブ（Cmd+Option+→）
             };
 
-            close_tab {
+            reload_tab {
                 pattern = <GESTURE_UP>;
-                bindings = <&kp LG(W)>;         // タブを閉じる（Cmd+W）
+                bindings = <&kp LG(R)>;         // 再読み込み（Cmd+R）。上→下と前半が重なるため idle-timeout 後に発動
             };
 
-            reload_tab {
+            close_tab {
+                pattern = <GESTURE_UP GESTURE_DOWN>;
+                bindings = <&kp LG(W)>;         // タブを閉じる（Cmd+W）：上に弾いて戻す
+            };
+
+            back_tab {
                 pattern = <GESTURE_DOWN>;
-                bindings = <&kp LG(R)>;         // 再読み込み（Cmd+R）
+                bindings = <&kp LG(LEFT)>;      // 戻る（Cmd+←）。下→上と前半が重なるため idle-timeout 後に発動
+            };
+
+            forward_tab {
+                pattern = <GESTURE_DOWN GESTURE_UP>;
+                bindings = <&kp LG(RIGHT)>;     // 進む（Cmd+→）：下に弾いて戻す
             };
         };
     };
