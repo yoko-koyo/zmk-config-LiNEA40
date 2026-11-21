@@ -53,7 +53,7 @@
     };
 };
 
-// タブ移動ジェスチャー（GESTURE レイヤー中 = J キー / MOUSE レイヤーの MB2 長押し中にボールで描く）
+// タブ移動ジェスチャー（GESTURE レイヤー中 = F / L キー長押し中にボールで描く）
 
 / {
     input_processors {
@@ -348,7 +348,7 @@
             bindings = <&mo>, <&kp>;
         };
 
-        // 文字キー用 Layer-Tap（L: SCROLL / J: GESTURE）
+        // 文字キー用 Layer-Tap（K: SCROLL / F・L: GESTURE）
         // 押した瞬間からレイヤーを有効にし、長押し中にボールを動かすとスクロール・タブジェスチャーになる
         // tap-preferred + require-prior-idle でタイピング中は文字のまま
 
@@ -364,8 +364,8 @@
             bindings = <&mo>, <&kp>;
         };
 
-        // マウスボタン用 Layer-Tap（MOUSE レイヤーの MB2: 長押しで GESTURE）
-        // 押した瞬間から GESTURE を有効にし、長押し中にボールを動かすとタブジェスチャーになる
+        // マウスボタン用 Layer-Tap（MOUSE レイヤーの J: タップ MB2 / 長押し SCROLL）
+        // 押した瞬間からレイヤーを有効にし、長押し中にボールを動かすとすぐスクロールになる
 
         mb_lt: mb_lt {
             compatible = "zmk,behavior-hold-tap";
@@ -387,7 +387,7 @@
         default_layer {
             bindings = <
 &kp Q         &kp W        &kp E       &kp R               &kp T                                              &kp Y             &kp U  &kp I      &kp O          &kp P
-&kp A         &kp S        &kp D       &kp F               &kp G                                              &kp H             &l_scrl GESTURE J  &kp K      &l_scrl SCROLL L  &kp MINUS
+&kp A         &kp S        &kp D       &l_scrl GESTURE F   &kp G                                              &kp H             &kp J  &l_scrl SCROLL K      &l_scrl GESTURE L  &kp MINUS
 &st LSHIFT Z  &st LCTRL X  &st LALT C  &kp V               &kp B                                              &kp N             &kp M  &kp COMMA  &st RCTRL DOT  &st RSHIFT EQUAL
 &mo FUNCTION  &kp LCTRL    &kp LALT    &lt_k SYMBOL LANG1  &cmd_eisu LGUI 0  &stl FUNCTION SPACE    &bs_sft RSHIFT BSPC  &lt_k NUMBER RET         &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))  &hm RSHIFT ESC
             >;
@@ -400,7 +400,7 @@
         MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans      &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &mb_lt GESTURE MB2  &mkp MB1  &trans      &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &mb_lt SCROLL MB2  &mkp MB1  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans      &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans            &trans    &trans      &trans
             >;
@@ -479,7 +479,7 @@
             >;
         };
 
-        //8 J / MB2 長押し中のタブ移動ジェスチャー用（キーは全て透過）
+        //8 F / L 長押し中のタブ移動ジェスチャー用（キーは全て透過）
 
         GESTURE {
             bindings = <
